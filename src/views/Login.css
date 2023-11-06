@@ -1,0 +1,79 @@
+.LoginPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg_gray);
+    display: flex;
+    flex-direction: column;
+}
+
+.LoginPageTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    padding-top: 10vh;
+    font-size: 2.3em;
+    font-weight: 800;
+}
+
+.LoginPageForm {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.InputContainer {
+    margin: auto;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50vw;
+    height: 3em;
+    border-color: aliceblue;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0.5rem 2rem 0.5rem 0.5rem
+}
+
+.InputContainer label {
+    font-weight: 500;
+}
+
+.InputContainer input {
+    height: 5em;
+    border-style: none;
+    outline: none;
+}
+
+.LoginPage > .ActionButtonGroup{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+.LoginPage > .ActionButtonGroup > button {
+    margin-top: 1em;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+    background-color: var(--blue);
+    border-radius: 6px;
+    color: white;
+}
+
+.LoginErrMsg{
+    font-size: 1em;
+    background-color: crimson;
+    width: fit-content;
+    margin: auto;
+    margin-top: 2em;
+    padding: 0.5em 1em;
+}
+
+.CreatedTimeDisplay{
+    color: var(--text_gray);
+    font-size: 0.9em;
+    padding-top: 0.5em;
+}

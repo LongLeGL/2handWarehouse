@@ -1,0 +1,72 @@
+.RegisterPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg_gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.RegisterPageTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    padding-top: 10vh;
+    font-size: 2.3em;
+    font-weight: 800;
+}
+
+.RegisterPageForm {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding-top: 10vh;
+}
+
+.InputContainer {
+    margin: auto;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50vw;
+    height: 3em;
+    border-color: aliceblue;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0.5rem 2rem 0.5rem 0.5rem
+}
+
+.InputContainer label {
+    font-weight: 500;
+}
+
+.InputContainer input {
+    height: 5em;
+    border-style: none;
+    outline: none;
+}
+
+.RegisterPage > .RegisterSubmit {
+    margin: auto;
+    margin-top: 2em;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+    background-color: var(--blue);
+    border-radius: 6px;
+    color: white;
+}
+
+.RegisterErrMsg{
+    font-size: 5em;
+    background-color: crimson;
+    width: fit-content;
+    margin: auto;
+    margin-top: 2em;
+    padding: 0.5em 1em;
+}
