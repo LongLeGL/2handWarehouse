@@ -1,0 +1,135 @@
+.cardproduct {
+    height: 393px;
+    position: relative;
+    width: 297px;
+  }
+  
+  .cardproduct .cardimage {
+    background-color: #ffffff;
+    height: 229px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 297px;
+  }
+  
+  .cardproduct .cardrectangle {
+    height: 198px;
+    left: 19px;
+    position: absolute;
+    top: 16px;
+    width: 259px;
+  }
+  
+  .cardproduct .cardtext {
+    height: 164px;
+    left: 0;
+    position: absolute;
+    top: 229px;
+    width: 297px;
+  }
+  
+  .cardproduct .cardtext-wrapper {
+    color: var(--secondarydarker);
+    font-family: "Roboto-Light", Helvetica;
+    font-size: 14px;
+    font-weight: 300;
+    height: 20px;
+    left: 113px;
+    letter-spacing: 0.28px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    text-decoration: underline;
+    top: 127px;
+    white-space: nowrap;
+  }
+  
+  .cardproduct .cardoverlap-group {
+    height: 62px;
+    left: 37px;
+    position: absolute;
+    top: 24px;
+    width: 230px;
+  }
+  
+  .cardproduct .cardgroup {
+    height: 62px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 230px;
+  }
+  
+  .cardproduct .cardbucklo-wrop-wooden {
+    color: var(--neutraldarker);
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 18px;
+    font-weight: 700;
+    height: 21px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    white-space: nowrap;
+  }
+  
+  .cardproduct .cardelement {
+    color: #1d1e1e;
+    font-family: "Roboto-Medium", Helvetica;
+    font-size: 24px;
+    font-weight: 500;
+    left: 49px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 34px;
+    white-space: nowrap;
+  }
+  
+  .cardproduct .carddiv {
+    background-color: #d9d9d9;
+    height: 2px;
+    left: 122px;
+    position: absolute;
+    top: 6px;
+    width: 1px;
+  }
+  
+  .cardproduct .cardframe {
+    height: 2px;
+    left: 121px;
+    position: absolute;
+    top: 8px;
+    width: 1px;
+  }
+  
+  .cardproduct .cardframe-2 {
+    background-image: url(./slice-1.svg);
+    background-size: 100% 100%;
+    height: 2px;
+    left: 119px;
+    position: absolute;
+    top: 8px;
+    width: 1px;
+  }
+  
+  .cardproduct .cardtext-wrapper-2 {
+    color: #000000;
+    font-family: "Roboto-Light", Helvetica;
+    font-size: 14px;
+    font-weight: 300;
+    height: 22px;
+    left: 63px;
+    letter-spacing: 0.28px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 93px;
+    white-space: nowrap;
+    width: 135px;
+  }
+  
