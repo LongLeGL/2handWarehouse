@@ -1,0 +1,339 @@
+body{
+    height: 2000px;
+  }
+  
+  .label {
+    height: 48px;
+    width: 188px;
+  }
+  
+  .label .text-wrapper {
+    color: var(--neutraldarkest);
+    font-family: "Roboto-Light", Helvetica;
+    font-size: 30px;
+    font-weight: 300;
+    height: 48px;
+  
+    letter-spacing: 0;
+    line-height: 48px;
+    /* position: fixed; */
+    text-align: center;
+    white-space: nowrap;
+    margin-left: 160px;
+  }
+  
+  .pay-price {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .price-table{
+    margin-left: -25px;
+  }
+  .grid-container {
+    margin-left: 160px;
+    margin-top: 20px;
+    height: 30px;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    /* gap: 10px; */
+    background-color: #ededed;
+    padding: 10px 0px 10px 0px;
+  
+  }
+  
+  .grid-container>div {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 20px;
+  }
+  
+  
+  .item1 {
+    grid-column: 1 / span 4;
+  }
+  
+  .grid-container-product {
+    margin-left: 160px;
+  
+    height: 120px;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    /* gap: 10px; */
+    background-color: #ededed;
+    padding: 10px 0px 10px 0px;
+  
+  }
+  
+  .grid-container-product>div {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* text-align: center; */
+    padding: 5px 0px;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  
+  .item4 {
+    grid-column: 1 / span 4;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+  }
+  
+  .delete-icon {
+    margin-left: 30px;
+    font-size: 30px;
+  }
+  
+  .product-picture {
+    margin-left: 70px;
+    font-size: 15px;
+  }
+  
+  .product-info {
+    margin-left: 30px;
+  }
+  
+  .product-name {
+    font-weight: bold;
+    font-size: 17px;
+  }
+  
+  .product-color {
+    color: #616161;
+    font-size: 17px;
+  }
+  
+  .product-size {
+    color: #616161;
+    font-size: 17px;
+  }
+  
+  .item5 {
+    /* margin-left: 30px; */
+    margin-top: 20px;
+    margin-right: 100px;
+    text-align: center;
+    font-size: 17px;
+    width: 130px;
+    height: 35px;
+    border-radius: 40px;
+    border: 1px solid;
+    border-color: var(--neutrallighter);
+  }
+  
+  .item6 {
+  
+    margin-right: 70px;
+    font-size: 17px;
+  
+  }
+  
+  .pay-summary {
+    height: 200px;
+    margin-top: 20px;
+    padding: 15px 15px;
+    background-color: #fff;
+    width: 250px;
+    max-width: 450px;
+    border: 1px groove #c7c7c7;
+    border-radius: 5px;
+   
+  }
+  .summary{
+    font-size: 25px;
+  }
+  .total-final-price {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .shipping{
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .total{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .checkout {
+    padding:13px;
+    color: white;   
+    font-size: 16px;
+    text-align: center;
+    border: 0;
+    outline: none;
+    display: block;
+    width: 100%;
+    border-radius: 35px;
+    background-color: black;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 18px;
+  }
+  .delivery-payment{
+    margin-left: -100px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+  .delivery-payment-tittle{
+    font-size: 30px;
+  }
+  .container-delivery {
+    margin-top: 20px;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: lighter;
+    color: #727272;
+  }
+  .container-delivery input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark-delivery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container-delivery:hover input ~ .checkmark-delivery {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container-delivery input:checked ~ .checkmark-delivery {
+    background-color: #EF8C5F;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark-delivery:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container-delivery input:checked ~ .checkmark-delivery:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container-delivery .checkmark-delivery:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+  .country-label, .province-label, .city-label, .address-label{
+    margin-top: 20px;
+    font-size: 25px;
+    /* color: #808194; */
+    margin-bottom: 7px;
+    display: inline-block;
+    
+  }
+  .country-input, .province-input, .city-input, .address-input{
+    
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid #808194;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .container-payment{
+    margin-top: 20px;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: lighter;
+    
+  }
+  .container-payment input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark-payment{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container-payment:hover input ~ .checkmark-payment {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container-payment input:checked ~ .checkmark-payment {
+    background-color: #EF8C5F;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark-payment:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container-payment input:checked ~ .checkmark-payment:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container-payment .checkmark-payment:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
