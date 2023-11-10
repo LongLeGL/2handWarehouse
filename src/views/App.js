@@ -8,7 +8,10 @@ import './App.css'
 import UpperBar from './components/UpperBar';
 import ViewItem from './ViewItem';
 import HomePage from './HomePage';
+
 import Login from './Login';
+import Footer from './components/Footer';
+
 // import ResultPage from './ResultPage'
 
 
@@ -40,6 +43,7 @@ function App() {
           <Route path="/ProductPost" element={<ProductPosting />} exact='True' />
         </Route>
       </Routes> */}
+
     </React.Fragment>
   );
 }
