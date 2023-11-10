@@ -1,40 +1,54 @@
 .LoginPage {
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--bg_gray);
+    width: 100%;
+    height: 100%;
+    background-color: white;
     display: flex;
     flex-direction: column;
 }
 
-.LoginPageTitle {
+#loginModal_Logo{
+    padding-top: 2em;
+    padding-left: 2em;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5em;
-    padding-top: 10vh;
-    font-size: 2.3em;
-    font-weight: 800;
+    gap: 0.5em
 }
 
-.LoginPageForm {
+#loginModal_title{
+    padding-top: 1em;
+    padding-left: 2em;
+}
+
+.LoginPageForm, .RegisterPageForm {
     margin-top: 2em;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.accessFormLabel{
+    margin-bottom: 0.3em;
 }
 
 .InputContainer {
     margin: auto;
-    margin-top: 1em;
+    margin-top: 0em;
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 50vw;
-    height: 3em;
-    border-color: aliceblue;
-    border-radius: 8px;
-    border-width: 2px;
-    border-style: solid;
+
+    width: 80%;
+    border: none;
     padding: 0.5rem 2rem 0.5rem 0.5rem
+}
+
+#loginSubmitBtn{
+    width: 100%;
+    margin-top: 1em;
+    height: 2.4em;
+    background-color: rgba(222, 82, 18, 1);
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .InputContainer label {
@@ -42,25 +56,12 @@
 }
 
 .InputContainer input {
-    height: 5em;
-    border-style: none;
-    outline: none;
-}
-
-.LoginPage > .ActionButtonGroup{
-    display: flex;
-    gap: 2em;
-    justify-content: center;
-}
-.LoginPage > .ActionButtonGroup > button {
-    margin-top: 1em;
-    text-align: center;
-    font-size: 1.2em;
-    padding: 0.5em 1.5em;
-    cursor: pointer;
-    background-color: var(--blue);
-    border-radius: 6px;
-    color: white;
+    height: 2em;
+    background-color: white;
+    border-radius: 40px;
+    border: 2px solid;
+    border-color: rgba(182, 184, 184, 1);
+    padding: 0.2em 1em;
 }
 
 .LoginErrMsg{
@@ -70,10 +71,4 @@
     margin: auto;
     margin-top: 2em;
     padding: 0.5em 1em;
-}
-
-.CreatedTimeDisplay{
-    color: var(--text_gray);
-    font-size: 0.9em;
-    padding-top: 0.5em;
 }

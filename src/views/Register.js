@@ -18,22 +18,39 @@ function Register() {
 
     return (
         <div className='RegisterPage'>
-            <h1 className='RegisterPageTitle'>Registration</h1>
+            <div id='loginModal_Logo'>
+                <div id='logoRedCircle'>
+                <div id='logoNumber'>2</div>
+                </div>
+                <div id='logoText'>hand</div>
+            </div>
+            
+            <div id='loginModal_title'>
+                <h2>Register new account</h2>
+            </div>
+
             <form className='RegisterPageForm'>
                 <div className='InputContainer'>
-                    <label>Username or Email</label>
+                    <div className='accessFormLabel'>Username or Email</div>
                     <input type="text" name="name" onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className='InputContainer'>
-                    <label>Password</label>
+                    <div className='accessFormLabel'>Password</div>
                     <input type="password" name="password" onChange={e => setPassword(e.target.value)} />
                 </div>
                 <div className='InputContainer'>
-                    <label>Repeat Password</label>
+                    <div className='accessFormLabel'>Re-enter Password</div>
                     <input type="password" name="password" onChange={e => setPasswordr(e.target.value)} />
                 </div>
+                <div id='InputContainerToS'>
+                    <input type="checkbox" name="password" onChange={e => setPasswordr(e.target.value)} />
+                    <div className='accessFormLabel'>By submitting this form you agree to our Terms and Conditions</div>
+                </div>
+                <div className='InputContainer'>
+                    <button id='loginSubmitBtn' type='submit' onClick={submitRegister}> Register new account </button>
+                </div>
             </form>
-            <button className='RegisterSubmit' onClick={submitRegister}>Register</button>
+
             <div className= {!errMsg ? 'LoginErrMsg.hidden' : 'LoginErrMsg'}>{errMsg}</div>
         </div>
     );
