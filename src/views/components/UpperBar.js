@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
 
 import './UpperBar.css'
 
@@ -38,8 +38,8 @@ function UpperBar (props) {
 				<SearchBar outputSetter={setResults} />
 
 				<div className='upperBarBtns'>
-					<button id="cartBtn" onClick={null}><FontAwesomeIcon icon={faShoppingCart} /></button>
-					<button className='BarLoginButton' onClick={onclUpperBarUserBtn}><FontAwesomeIcon icon={faUser} />{(username) ? username: 'Login'}</button>
+					<button id="cartBtn" onClick={null}><FontAwesomeIcon icon={faCartShopping} /></button>
+					<button className='BarLoginButton' onClick={onclUpperBarUserBtn}><FontAwesomeIcon icon={faUser} />{(username) ? username: 'Sign in'}</button>
 				</div>
 			</div>
 

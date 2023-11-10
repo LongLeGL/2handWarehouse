@@ -3,12 +3,18 @@
   --border_gray: #D1D1D1;
   --blue: #1900D5;
   --text_gray: #7C7C7C;
+  --neutraldarkest: rgba(29, 31, 31, 1);
+  --neutraldarker: rgba(93, 95, 95, 1);
+  --neutralgrey: rgba(182, 184, 184, 1);
+  --neutrallighter: rgba(227, 227, 227, 1);
+  --neutrallightest: rgba(244, 244, 245, 1);
 }
 
 * {
   font-family: Roboto, Arial, Helvetica;
   font-weight: 250;
   margin: 0; padding: 0; border: none;
+  max-width: 100%;
 }
 
 button {
@@ -34,8 +40,10 @@ a:hover {
 
 
 body {
-  margin: 0;
+  margin: 0 0;
   padding: 0 0;
+  width: 100%;
+  max-width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -46,4 +54,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.mainBody {
+  min-height: 60vh;
+  width:fit-content;
 }
