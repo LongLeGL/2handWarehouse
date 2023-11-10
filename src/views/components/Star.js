@@ -1,0 +1,56 @@
+
+import styled from "styled-components";
+import { faStar , faStarHalfStroke} from '@fortawesome/free-solid-svg-icons'
+import { faStar as faStar2 } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+const Star = ({ stars, reviews }) => {
+    const ratingStar = Array.from({ length: 5 }, (elem, index) => {
+        let number = index + 0.5;
+        // debugger;
+        return (
+            <span key={index}>
+                {stars >= index + 1 ? (
+                    <FontAwesomeIcon icon={faStar}  className="icon"/>
+                ) : stars >= number ? (
+                    <FontAwesomeIcon icon={faStarHalfStroke} className="icon"/>                    
+                ) : (
+                    <FontAwesomeIcon icon={faStar2}  className="icon"/>
+                )}
+            </span>
+        );
+    });
+
+    return (
+        <Wrapper>
+            <div className="icon-style">
+                {ratingStar}
+                <p>({reviews} customer reviews)</p>
+            </div>
+        </Wrapper>
+    );
+};
+
+const Wrapper = styled.section`
+  .icon-style {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    justify-content: flex-start;
+
+    .icon {
+      font-size: 1rem;
+      color: orange;
+    }
+
+    .empty-icon {
+      font-size: 2.6rem;
+    }
+    p {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+  }
+`;
+
+export default Star;

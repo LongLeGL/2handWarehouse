@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
 
 import './UpperBar.css'
 
@@ -14,7 +14,7 @@ function UpperBar (props) {
 	function onclUpperBarUserBtn (){
 		if (username){
 			sessionStorage.setItem('username', '');
-			window.location.href = '/RecipeLibraryWebapp';
+			window.location.href = '2HandWarehouse/Home';
 		}
 		else navigate('Login')
 	}
@@ -24,7 +24,7 @@ function UpperBar (props) {
 	return (
 		<div className='UpperBar'>
 			<div id='upperControlsBar'>
-				<Link to="">
+				<Link to="/2HandWarehouse/Home">
 					<div className='UpperbarHomeButton'>
 						<div id='upBar_Logo'>
 							<div id='logoRedCircle'>
@@ -38,17 +38,18 @@ function UpperBar (props) {
 				<SearchBar outputSetter={setResults} />
 
 				<div className='upperBarBtns'>
-					<button id="cartBtn" onClick={null}><FontAwesomeIcon icon={faShoppingCart} /></button>
-					<button className='BarLoginButton' onClick={onclUpperBarUserBtn}><FontAwesomeIcon icon={faUser} />{(username) ? username: 'Login'}</button>
+					<button id="cartBtn" onClick={null}><FontAwesomeIcon icon={faCartShopping} /></button>
+					<button className='BarLoginButton' onClick={onclUpperBarUserBtn}><FontAwesomeIcon icon={faUser} />{(username) ? username: 'Sign in'}</button>
 				</div>
 			</div>
 
 			<div id='navBar'>
-				<Link to=''>Home</Link>
-				<Link to=''>Shop</Link>
-				<Link to=''>Blog</Link>
-				<Link to=''>Contacts</Link>
-				<Link to=''>About Us</Link>
+				<Link to='/2HandWarehouse/Home'>Home</Link>
+				<Link to='/2HandWarehouse/'>Shop</Link>
+				<Link to='/2HandWarehouse/'>Blog</Link>
+				<Link to='/2HandWarehouse/'>Contacts</Link>
+				<Link to='/2HandWarehouse/'>About Us</Link>
+				<Link to='/2HandWarehouse/PostItem'>[T]Post item</Link>
 			</div>
 
 

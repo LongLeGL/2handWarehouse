@@ -1,8 +1,7 @@
 import './CheckOutPage.css';
-import logoImg from '../icons/logo.png';
+import logoImg from '../../icons/logo.png';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
 function CheckOutPage() {
 

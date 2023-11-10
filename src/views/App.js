@@ -1,25 +1,17 @@
 import React from 'react';
-import { Routes, Route } from "react-router-dom";
-
+import { Routes, Route, Outlet} from "react-router-dom";
 import './App.css'
 
 
 import UpperBar from './components/UpperBar';
-import ViewItem from './ViewItem';
-import HomePage from './HomePage';
-// import ResultPage from './ResultPage'
-
-
-
+import Footer from './components/Footer';
 
 function App() {
   return (
     <React.Fragment>
       <UpperBar />
-      <Routes>
-        <Route path="*" element={<HomePage/>} exact='True' />
-        <Route path="/ViewItem/:ItemName/:userName" element={<ViewItem/>} exact='True' />
-      </Routes>
+      <Outlet/>
+      <Footer/>
     </React.Fragment>
   );
 }

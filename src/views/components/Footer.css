@@ -1,0 +1,94 @@
+.footer {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 40vh;
+  height: fit-content;
+  background-color: var(--neutraldarkest);
+  color: var(--secondarylightest);
+}
+
+.FooterLogo{
+  margin: 0;
+  padding-top: 2em;
+  padding-left: 3em;
+}
+
+#footerLogoText{
+  position: relative;
+  width: 30px;
+  height: 25px;
+  font-family: "Roboto-Bold", Helvetica;
+  font-weight: 500;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 1.1px;
+  line-height: 7.5vh;
+  white-space: nowrap;
+}
+
+#footer3cols{
+  margin: 2.5em 0 2.5em 3em;
+  display: flex;
+  justify-content: space-around;
+}
+
+#footerContacts{
+  width: 30vw;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+  
+#footerLinks{
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+#footerLinks a{
+  color: var(--secondarylightest);
+  font-size: 14px;
+}
+
+#footerNewsletter{
+  width: 40vw;
+  margin-right: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#newsletterInputbox{
+  position: relative;
+  height: 48px;
+  width: 100%;
+  border-radius: 40px;
+  background-color: rgb(75, 75, 75);
+  gap: 1em;
+}
+
+#newsEmailInput{
+  position: relative;
+  height: 48px;
+  width: 100%;
+  border-radius: 40px;
+  background-color: rgb(75, 75, 75);
+}
+#newsEmailInput::placeholder{
+  color: var(--neutrallighter);
+  background-color: transparent;
+  text-decoration: none;
+  padding-left: 1.2em;
+}
+
+#registerNewsLetterBtn{
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  right: 0;
+}
