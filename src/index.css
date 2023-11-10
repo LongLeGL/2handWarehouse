@@ -8,6 +8,7 @@
   --neutralgrey: rgba(182, 184, 184, 1);
   --neutrallighter: rgba(227, 227, 227, 1);
   --neutrallightest: rgba(244, 244, 245, 1);
+  --secondarylightest: rgba(251, 248, 245, 1);
 }
 
 * {
