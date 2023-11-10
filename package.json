@@ -1,7 +1,7 @@
 {
   "name": "2handwarehouses",
   "version": "0.1.0",
-  "homepage": "2HandWarehouse",
+  "homepage": "2HandWarehouse/Home",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",

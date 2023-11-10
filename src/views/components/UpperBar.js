@@ -14,7 +14,7 @@ function UpperBar (props) {
 	function onclUpperBarUserBtn (){
 		if (username){
 			sessionStorage.setItem('username', '');
-			window.location.href = '/RecipeLibraryWebapp';
+			window.location.href = '2HandWarehouse/Home';
 		}
 		else navigate('Login')
 	}
@@ -45,10 +45,11 @@ function UpperBar (props) {
 
 			<div id='navBar'>
 				<Link to='/2HandWarehouse/Home'>Home</Link>
-				<Link to=''>Shop</Link>
-				<Link to=''>Blog</Link>
-				<Link to=''>Contacts</Link>
-				<Link to=''>About Us</Link>
+				<Link to='/2HandWarehouse/'>Shop</Link>
+				<Link to='/2HandWarehouse/'>Blog</Link>
+				<Link to='/2HandWarehouse/'>Contacts</Link>
+				<Link to='/2HandWarehouse/'>About Us</Link>
+				<Link to='/2HandWarehouse/PostItem'>[T]Post item</Link>
 			</div>
 
 

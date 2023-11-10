@@ -10,6 +10,8 @@ import Login from './views/Login';
 import Register from './views/Register';
 import ProductViewing from './views/ProductViewPage';
 import HomePage from './views/HomePage';
+import CheckOutPage from './views/components/CheckOutPage';
+import ProductPosting from './views/ProductPostingPage';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +24,26 @@ const router = createBrowserRouter([
       },
       {
         path: "/2HandWarehouse/ViewProduct",
-        element: <ProductViewing/>,
+        element: <ProductViewing
+          mainImage={[{ id: '1', url: "https://down-vn.img.susercontent.com/file/c3c76a6e6bc7557377c4ac31adcff646" },
+          { id: '2', url: "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-llt6afd17vtrba" },
+          { id: '3', url: "https://down-vn.img.susercontent.com/file/bbf41598d31e6414c79e2ea327a55d7c" },
+          { id: '4', url: "https://down-vn.img.susercontent.com/file/sg-11134201-22120-b5nywz8t4jkv30" }]}          
+          name=""
+          price=""
+          rate={5}
+          description=""
+          location=""
+          contact={[{ phone: "" }, { addr: "" }]}
+        />,
+      },
+      {
+        path: "/2HandWarehouse/PostItem",
+        element: <ProductPosting/>,
+      },
+      {
+        path: "/2HandWarehouse/Checkout",
+        element: <CheckOutPage/>,
       },
     ],
   },
