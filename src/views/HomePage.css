@@ -1,44 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 .HomePage{
     padding-top: 16vh;
     width: 100vw;
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+.mainImage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./images/mainImage.png');
+    background-size: cover;
+    background-position: center;
+    
+}
+.brandName {
+    text-align: center;
+    white-space: nowrap;
+    font-size: 8vw;
+    color: #1D1F1F; /* Change this to the color you want for the text */
+    font-weight: bold;
+}
+.PopularCatalogue{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 3vw;
+    padding: 5vh;
+}
+.oneKind{
+    text-align: center;
+    width: 10vw;
+}
+.PopularCatalogue_Image{
+    objectFit: contain;
+    objectPosition: center;
+    width: 10vw;
+    overflow: hidden;
+}
+.PopularCatalogue_Text{
+    color: #E9672B;
+    letterSpacing: 1vh;
+    alignSelf: center;
+    marginTop: 1vh;
+    whiteSpace: nowrap;
+    font-size: 1em;
+}
+.flex-container {
+    display: flex;
+    width: 60vw;
+}
+.flex-container > div {
+    background-color: #ffffff;
+    margin: 1vh;
+    padding: 0px;
+  }
+.temp{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.image_onecolumn{
+    margin: 0px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    max-height: 85%;
+}
+.onecolumn{
+    display: flex;
+  flex-direction: column;
+}
+.LastestProducts{
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.sectionName {
+    color: var(--neutral-darkest, #1D1F1F);
+    text-align: center;
+    white-space: nowrap;
+    font: 300 2em/160% Roboto, sans-serif;
+}
+@media (max-width: 991px) {
+    .sectionName {
+        white-space: initial;
+    }
+}
+.LP {
+    gap: 1vw;
     display: flex;
     flex-direction: column;
 }
 
-.NewRecipe{
-    margin: 2.2em auto;
+@media (max-width: 991px) {
+    .LP {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+    }
 }
-.CreateRecipeBtn{
-    background-color: #C1839F;
-    font-size: 1.1em;
-    height: 2.2em;
-}
-.CreateRecipeBtn:disabled{
-    background-color: #e1ced7;
-    cursor: default;
+.columnLP {
+    display: flex;
+    flex-direction: row;
+    line-height: normal;
+    width: 25%;
+    margin-left: 0px;
+    gap: 1vw;
 }
 
-.RecipeOfTheDay {
-    margin: 0 auto;
+@media (max-width: 991px) {
+    .columnLP {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+.blockLP {
+    justify-content: center;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    
+}
+
+@media (max-width: 991px) {
+    .blockLP {
+        margin-top: 10px;
+    }
+}
+.imageLP {
+    border-radius: 0px 0px 0px 0px;
+    background-color: var(--neutral-white, #FFF);
+    padding: 0px 0px;
+    aspect-ratio: 1.16;
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+}
+.LPinfo {
+    border-radius: 0px 0px 0px 0px;
+    background-color: var(--neutral-white, #FFF);
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 0 0px;
+}
+.LPname {
+    color: var(--neutral-darker, #5D5F5F);
+    text-align: center;
+    letter-spacing: 0px;
+    align-self: stretch;
+    white-space: nowrap;
+    font: 300 1em/150% Roboto, sans-serif;
+}
+
+@media (max-width: 991px) {
+    .LPname {
+        white-space: initial;
+    }
+}
+.LPprice {
+    color: var(--accent-red, #DA3E31);
+    text-align: center;
+    letter-spacing: 0px;
+    align-self: center;
+    margin-top: 1vh;
+    white-space: nowrap;
+    font: 300 1em/150% Roboto, sans-serif;
+}
+
+@media (max-width: 991px) {
+    .LPprice {
+        white-space: initial;
+    }
+}
+.LPaddress {
+    justify-content: center;
+    color: #000;
+    text-align: center;
+    letter-spacing: 0px;
+    margin-top: 1vh;
+    font: 300 1em/143% Roboto, sans-serif;
+}
+.LPadd {
+    color: var(--secondary-darker, #E9672B);
+    text-align: center;
+    letter-spacing: 0px;
+    text-decoration: underline;
+    align-self: center;
+    margin-top: 0px;
+    white-space: nowrap;
+    font: 300 1em/143% Roboto, sans-serif;
+}
+
+@media (max-width: 991px) {
+    .LPadd {
+        white-space: initial;
+    }
+}
+.ExploreOurProducts{
+    margin-top: 2vh;
+    margin-right: 20vw;
+    margin-bottom: 2vh;
+    margin-left: 20vw;
+}
+.BestSeller{
+    background-image: url('./images/background-circle.png');
+    background-size: cover;
+    margin-top: 2vh;
+    margin-right: 20vw;
+    margin-bottom: 2vh;
+    margin-left: 20vw;
+
+    display: grid;
+    column-gap: 2vw;
+    grid-template-columns: auto auto auto;
+
+    align-items: center;
+
+}
+.book{
+    width: 10vw;
+    padding: 3vh 1vw 1vh 2vw;
+
+}
+.grid-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 1vw;
 }
-.RecipeOfTheDay #RecipeOfTheDay-header{
-    font-size: 20px;
-    margin-bottom: 15px;
-    
-}
-.RecipeOfTheDay #RecipeOfTheDay-panel{
-    background-color: white;
-    width: 40vw;
-    margin-bottom: 20px;    
-    border-color: var(--border_gray);
-    border-radius: 4px;
-    border-style: solid;    
-    display: flex;
-    flex-direction: column;
-    padding: 1em 1em;
+.BStitle {
+    color: var(--neutral-darkest, #1D1F1F);
+    text-align: center;
+    align-self: stretch;
+    width: 100%;
+    font: 300 2em/169% Roboto, sans-serif;
+    background-color: #d1caca;
+    margin-bottom: 5vh;
 }
 
+@media (max-width: 991px) {
+    .BStitle {
+        max-width: 100%;
+        font-size: 1.5em;
+    }
+}
+.BScate {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0px;
+    text-align: center;
+    background-image: url(https://cdn.builder.io/api/v1/image/assets/TEMP/fb135b16-b09b-4bcf-94c5-0572fd218fe6);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (max-width: 991px) {
+    .BScate {
+        max-width: 100%;
+        justify-content: center;
+    }
+}
+
+.BSnav {
+    color: var(--neutral-white, #FFF);
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 10vh;
+    background-color: #103D37;
+    margin-top: 5vh;
+    width: 15vw;
+    max-width: 100%;
+    align-items: center;
+    padding: 2vh 2vw;
+    font: 300 1em/143% Roboto, sans-serif;
+}
+
+@media (max-width: 991px) {
+    .BSnav {
+        white-space: initial;
+    }
+}
+.Categories{
+    background-color: #E9672B;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 10vh;
+    padding-bottom: 10vh;
+}
+.CateTitle {
+    position: relative;
+    color: var(--neutral-white, #FFF);
+    text-align: center;
+    align-self: center;
+    margin-top: 1vh;
+    margin-bottom: 8vh;
+    white-space: nowrap;
+    font: 300 2em/178% Roboto, sans-serif;
+}
+
+@media (max-width: 991px) {
+    .CateTitle {
+        white-space: initial;
+    }
+}
+.CateSection{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.CateSectionName{
+    color: var(--neutral-white, #FFF);
+    text-align: center;
+    align-self: center;
+    font: 300 1em/140% Roboto, sans-serif;
+
+}
+.myLine {
+    color: #ffffff;
+    background-color: #ffffff;
+    height: 2px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+.CateKinds{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.CateKindText {
+    color: var(--secondary-lightest, #FBF8F5);
+    text-align: center;
+    align-self: center;
+    white-space: nowrap;
+    font: 300 1em/140% Roboto, sans-serif;
+    margin-top: 4vh;
+}
+
+@media (max-width: 991px) {
+    .CateKindText {
+        white-space: initial;
+    }
+}
