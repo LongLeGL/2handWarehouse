@@ -49,6 +49,8 @@ const responsive = {
 	}
 };
 
+
+
 function HomePage() {
 	const username = sessionStorage.getItem('username');
 	//question: cai nay tu code cũ hả Long
@@ -574,10 +576,10 @@ function HomePage() {
 			</div>
 
 
-			{/* <Link to= "/2HandWarehouse/ViewProduct">
+			 <Link to= "/2HandWarehouse/ViewProduct">
 					<button className='CreateRecipeBtn'>View product</button>
 				</Link>
-			<Outlet/> */}
+			<Outlet/>
 		</div >
 	);
 }

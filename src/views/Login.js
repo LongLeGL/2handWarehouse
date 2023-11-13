@@ -22,24 +22,30 @@ function Login() {
 
   return (
     <div className='LoginPage'>
-      <div className='LoginPageTitle'>
-        <h1>2hand Warehouse</h1>
+      <div id='loginModal_Logo'>
+        <div id='logoRedCircle'>
+          <div id='logoNumber'>2</div>
+        </div>
+        <div id='logoText'>hand</div>
+      </div>
+      
+      <div id='loginModal_title'>
+        <h2>Login to your account</h2>
       </div>
 
       <form className='LoginPageForm'>
         <div className='InputContainer'>
-          <label>Username or Email</label>
+          <div className='accessFormLabel'>Username or Email</div>
           <input type="text" name="name" onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className='InputContainer'>
-          <label>Password</label>
+          <div className='accessFormLabel'>Password</div>
           <input type="password" name="password" onChange={e => setPassword(e.target.value)} />
         </div>
+        <div className='InputContainer'>
+          <button id='loginSubmitBtn' type='submit' onClick={handleSubmit}> Login </button>
+        </div>
       </form>
-      <div className='ActionButtonGroup'>
-        <button onClick={handleSubmit}> Login </button>
-        <button onClick={()=> navigate("/2handWarehouse/Register")}> Register </button>
-      </div>
       <div className={!errMsg ? 'LoginErrMsg.hidden' : 'LoginErrMsg'}>{errMsg}</div>
     </div>
   );

@@ -123,3 +123,59 @@
     font-size: 14px;
     letter-spacing: 0.32px;
 }
+
+
+#loginModal, #registerModal{
+    display: flex;
+    width: 75vw;
+    height: fit-content;
+}
+
+.modalCloseBtn{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+    top:0;
+    background-color: transparent;
+    font-size: 14px;
+    color: gray;
+}
+
+#modalImg{
+    width: 50vw;
+    background-image: url(../../../public/modalImg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: -25%;
+    margin-top: -30%;
+    content: ' ';
+    padding-left: 3em;
+}
+
+#loginModalBody, #registerModalBody{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#loginModal_registerSection{
+    display: flex;
+    justify-content: center;
+    gap: 0.75em;
+    margin-bottom: 2em;
+}
+#loginModal_registerSection span{
+    font-weight: 300;
+    color: #5c5e5e;
+    font-size: 14px;
+}
+#openRegisModalBtn{
+    background-color: transparent;
+    padding: 0 0;
+    width: fit-content;
+    height: fit-content;
+    font-weight: 300;
+    color: #2f80ed;
+    font-size: 14px;
+}
