@@ -12,7 +12,7 @@ import ProductViewing from './views/ProductViewPage';
 import HomePage from './views/HomePage';
 import CheckOutPage from './views/components/CheckOutPage';
 import ProductPosting from './views/ProductPostingPage';
-
+import ResultPage from './views/Result/ResultPage';
 const router = createBrowserRouter([
   {
     path: "/2HandWarehouse",
@@ -44,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/2HandWarehouse/Checkout",
         element: <CheckOutPage/>,
+      },
+      {
+        path: "/2HandWarehouse/Result",
+        element: <ResultPage/>,
       },
     ],
   },
