@@ -20,6 +20,8 @@
     outline: none;
     padding: 0.4em 1em;
     background-color: transparent;
+    text-decoration: none;
+
 }
 #search-box #search-btn{
 

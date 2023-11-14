@@ -5,6 +5,7 @@ import { products } from "../utils/products";
 import ShopList from "../components/ShopList";
 import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 import './ResultPage.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function ResultPage () {
   const [filterList, setFilterList] = useState(products);
