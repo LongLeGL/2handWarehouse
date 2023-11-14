@@ -41,7 +41,31 @@ function ProductViewing(props) {
                                         </p>
                                         <p className="text">
                                             <span className="span">
-                                                Ram 6/128g pin khỏe 5000mAh,Android 12
+                                            ✅Ram 6/128g pin khỏe 5000mAh,Android 12
+                                                <br />
+                                            </span>
+                                        </p>
+                                        <p className="text">
+                                            <span className="span">
+                                            ✅Mở khoá Vân Tay cạnh viền. Face ID đầy đủ,Tích hợp lao kép nên loa siêu to
+                                                <br />
+                                            </span>
+                                        </p>
+                                        <p className="text">
+                                            <span className="span">
+                                            ✅Bao test đổi hàng trong 7 ngày
+                                                <br />
+                                            </span>
+                                        </p>
+                                        <p className="text">
+                                            <span className="span">
+                                            ✅BH 12 tháng phần cứng
+                                                <br />
+                                            </span>
+                                        </p>
+                                        <p className="text">
+                                            <span className="span">
+                                            ✅Hỗ trợ ship COD (Miễn phí ship toàn quốc!)
                                                 <br />
                                             </span>
                                         </p>

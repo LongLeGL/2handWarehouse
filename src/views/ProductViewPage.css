@@ -485,7 +485,8 @@
   left: 964px;
   position: absolute;
   top: 150px;
-  width: 200px;
+  width: 200px; 
+  background-color: #e9672b;
 }
 
 .product-viewing .text-wrapper-12 {

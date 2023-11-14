@@ -1,0 +1,14 @@
+.amount-toggle button {
+    font-size: 2em; /* Increase the size of the text and the icon */
+    padding: 0.5vh; /* Increase the size of the button */
+    flex: 1; /* Allow the buttons to grow and shrink as needed */
+}
+
+  .amount-toggle {
+    display: flex; /* Align the buttons and the quantity horizontally */
+    justify-content: space-between; /* Distribute the space evenly between the buttons and the quantity */
+  }
+  .amount-style {
+    flex: 1; /* Allow the quantity to grow and shrink as needed */
+    text-align: center; /* Center the quantity */
+  }

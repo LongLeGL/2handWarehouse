@@ -11,7 +11,7 @@
   background-color: #ffffff;
   height: 2192px;
   overflow: hidden;
-  position: relative;
+  position: static;
   width: 1440px;
 }
 
@@ -399,7 +399,7 @@
 .product-posting .group-3 {
   height: 1502px;
   left: 42px;
-  position: absolute;
+  position: relative;
   top: 0px;
   width: 1362px;
 }
@@ -919,7 +919,7 @@
 }
 
 .product-posting .input-1 {
-  background-color: var(--neutrallighter);
+  /*background-color: var(--neutrallighter);*/
   border-color: var(--neutrallighter);
   border-radius: 40px;
   height: 150px;
@@ -929,7 +929,7 @@
   width: 500px;
 }
 .product-posting .input-2 {
-  background-color: var(--neutrallighter);
+  /*background-color: var(--neutrallighter);*/
   border-color: var(--neutrallighter);
   border-radius: 40px;
   height: 150px;
@@ -940,7 +940,7 @@
 }
 
 .product-posting .input-3 {
-  background-color: var(--neutrallighter);
+  /*background-color: var(--neutrallighter);*/
   border-color: var(--neutrallighter);
   border-radius: 40px;
   height: 150px;
@@ -997,7 +997,7 @@
   left: 160px;
   position: absolute;
   top: 21px;
-  width: 132px;
+  width: 300px;
 }
 
 .product-posting .overlap-group-4 {
@@ -1105,7 +1105,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 0;
+  top: 30px;
   white-space: nowrap;
   width: 246px;
 }

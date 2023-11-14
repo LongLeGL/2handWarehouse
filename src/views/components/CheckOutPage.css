@@ -28,7 +28,7 @@
     flex-direction: row;
   }
   .price-table{
-    margin-left: -25px;
+    margin-left: -150px;
   }
   .grid-container {
     margin-left: 160px;
@@ -40,6 +40,8 @@
     /* gap: 10px; */
     background-color: #ededed;
     padding: 10px 0px 10px 0px;
+
+    border-bottom: 1px solid black;
   
   }
   
