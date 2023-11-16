@@ -15,6 +15,7 @@ import OrderPage from './views/components/OrderPage';
 import OrderedPage from './views/components/OrderedPage';
 import ProductPosting from './views/ProductPostingPage';
 import OrderValidate from './views/components/OrderValidate';
+import DeliveryStatus from './views/components/DeliveryStatus';
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 const router = createBrowserRouter([
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/2HandWarehouse/OrderValidate",
         element: <OrderValidate/>,
+      },
+      {
+        path: "/2HandWarehouse/DeliveryStatus",
+        element: <DeliveryStatus/>,
       },
     ],
   },
