@@ -71,8 +71,8 @@ function UpperBar (props) {
 	return (
 		<div className='UpperBar'>
 			<div id='upperControlsBar'>
-				<Link to="/2HandWarehouse/Home">
-					<div className='UpperbarHomeButton'>
+				<Link className ="abc" to="/2HandWarehouse/Home">
+					<div className='UpperbarHomeButton' >
 						<div id='upBar_Logo'>
 							<div id='logoRedCircle'>
 								<div id='logoNumber'>2</div>

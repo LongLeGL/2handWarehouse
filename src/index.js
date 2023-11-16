@@ -14,6 +14,7 @@ import CheckOutPage from './views/components/CheckOutPage';
 import OrderPage from './views/components/OrderPage';
 import OrderedPage from './views/components/OrderedPage';
 import ProductPosting from './views/ProductPostingPage';
+import ResultPage from './views/Result/ResultPage';
 import OrderValidate from './views/components/OrderValidate';
 import DeliveryStatus from './views/components/DeliveryStatus';
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
@@ -147,6 +148,10 @@ const router = createBrowserRouter([
       {
         path: "/2HandWarehouse/Checkout",
         element: <CheckOutPage/>,
+      },
+      {
+        path: "/2HandWarehouse/Result",
+        element: <ResultPage/>,
       },
       {
         path: "/2HandWarehouse/Order",
