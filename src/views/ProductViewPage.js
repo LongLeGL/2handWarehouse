@@ -19,7 +19,7 @@ function ProductViewing(props) {
                     <div className="overlap-wrapper">
                         <div className="overlap-3">
                             <div className="product">
-                                <div className="rectangle" >
+                                <div className="rectangle">
                                     <MyImage imgs={props.mainImage} />
                                 </div>
                                 <p className="p">Oppo A57 Ram 6/128G xanh</p>

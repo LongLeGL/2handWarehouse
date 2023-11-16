@@ -11,8 +11,14 @@ import Register from './views/Register';
 import ProductViewing from './views/ProductViewPage';
 import HomePage from './views/HomePage';
 import CheckOutPage from './views/components/CheckOutPage';
+import OrderPage from './views/components/OrderPage';
+import OrderedPage from './views/components/OrderedPage';
 import ProductPosting from './views/ProductPostingPage';
 import ResultPage from './views/Result/ResultPage';
+import OrderValidate from './views/components/OrderValidate';
+import DeliveryStatus from './views/components/DeliveryStatus';
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+
 const router = createBrowserRouter([
   {
     path: "/2HandWarehouse",
@@ -49,6 +55,22 @@ const router = createBrowserRouter([
         path: "/2HandWarehouse/Result",
         element: <ResultPage/>,
       },
+      {
+        path: "/2HandWarehouse/Order",
+        element: <OrderPage/>,
+      },
+      {
+        path: "/2HandWarehouse/Ordered",
+        element: <OrderedPage/>,
+      },
+      {
+        path: "/2HandWarehouse/OrderValidate",
+        element: <OrderValidate/>,
+      },
+      {
+        path: "/2HandWarehouse/DeliveryStatus",
+        element: <DeliveryStatus/>,
+      },
     ],
   },
   {
@@ -64,7 +86,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <PayPalScriptProvider options={{"clientId":"ASzyUuWNg7SKgxpZs-IGy2ImRXn1McC31v6PHbGGVot8r9HZHIYWr7rH5rlpthjts_RE-RuzQAzrJnZp"}}>
+      <RouterProvider router={router} />
+    </PayPalScriptProvider>
   </React.StrictMode>
 );
 
