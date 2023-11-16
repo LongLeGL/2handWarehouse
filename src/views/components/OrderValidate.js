@@ -63,9 +63,36 @@ function OrderValidate() {
                             }}
                         />
                         <div class="lower-half">
-                            <button class="btn" style={{ color: "#00FF47" }}>Approve</button>
-                            <button class="btn" style={{ color: "#F00" }}>Reject</button>
-                            <button class="btn">Contact Buyer</button>
+                            <button class="btn" style={{
+                                color: "#00FF47",
+                                backgroundColor: "white",
+                                border: "1px solid black",
+                                width: "25%",
+                                borderRadius: "0px",
+                                marginTop: "100px",
+                                fontWeight: "bold",
+                                fontSize: "18px"
+                            }}>Approve</button>
+                            <button class="btn" style={{
+                                color: "#F00",
+                                backgroundColor: "white",
+                                border: "1px solid black",
+                                width: "25%",
+                                borderRadius: "0px",
+                                marginTop: "100px",
+                                fontWeight: "bold",
+                                fontSize: "18px"
+                            }}>Reject</button>
+                            <button class="btn" style={{
+                                color: "black",
+                                backgroundColor: "white",
+                                border: "1px solid black",
+                                width: "25%",
+                                borderRadius: "0px",
+                                marginTop: "100px",
+                                fontWeight: "bold",
+                                fontSize: "18px"
+                            }}>Contact Buyer</button>
                         </div>
                     </div>
                     <div class="order">
@@ -101,8 +128,18 @@ function OrderValidate() {
                             }}
                         />
                         <div class="lower-half">
-                            
-                            <button class="btn" style={{marginLeft:"480px"}}>Contact Seller</button>
+
+                            <button class="btn" style={{
+                                marginLeft: "480px",
+                                color: "black",
+                                backgroundColor: "white",
+                                border: "1px solid black",
+                                width: "25%",
+                                borderRadius: "0px",
+                                marginTop: "100px",
+                                fontWeight: "bold",
+                                fontSize: "18px"
+                            }}>Contact Seller</button>
                         </div>
                     </div>
                 </div>

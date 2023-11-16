@@ -16,7 +16,7 @@ h1{
     font-weight: bold;
 }
 .reset {
-    margin-top: 100px;
+    margin-top: 80px;
     padding: 35px 35px;
     background-color: #fff;
     width: 100%;
@@ -38,40 +38,13 @@ h1{
     font-size: 25px;
 }
 
-.total-final-price {
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.shipping {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.total {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.reset-submit {
-    padding: 15px;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-    border: 0;
-    outline: none;
-    display: block;
-    width: 100%;
-    border-radius: 5px;
-    background-color: #4F90F0;
-    cursor: pointer;
-    font-weight: 600;
+.detail {
     margin-top: 15px;
-    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
 }
+
+
+

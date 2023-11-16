@@ -21,7 +21,7 @@ function OrderPage() {
                 Shopping Cart 
             </div>
 
-            <div class="ml-[235px] flex gap-[20px]">
+            <div class="ml-[80px] flex gap-[20px]">
                 <div className='w-[932px] h-[202px] p-[2px] bg-[#e3e3e3] mb-[30px] flex flex-col items-center rounded-lg'>
                     <div className='flex flex-col w-full bg-white rounded-lg'>
                         <div className='flex items-center justify-between '>
@@ -86,25 +86,25 @@ function OrderPage() {
                 <div className='bg-[#e3e3e3] mr-[20px] p-[2px] min-w-[400px] rounded-lg'>
                     <div class="flex flex-col w-full p-[20px] bg-white rounded-lg">
                         <div class="summary">Summary</div>
-                        <div class="total-final-price">
-                            <div class="total-final">Total final price</div>
-                            <div class="price">$69.36</div>
-                        </div>
-                        <div class="shipping">
-                            <div class="shipping-text">Shipping</div>
-                            <div class="price">$0.0</div>
-                        </div>
-                        <hr
-                            style={{
-                                marginTop: '10px',
-                                background: '#c7c7c7',
-                                height: '0.5px',
-                            }}
-                        />
-                        <div class="total">
-                            <div class="total-text">Total</div>
-                            <div class="price">$69.36</div>
-                        </div>
+                        <div class="detail">
+							<div class="detail-attribute">Price</div>
+							<div class="detail-value">$69.36</div>
+						</div>
+						<div class="detail">
+							<div class="detail-attribute">Shipping cost</div>
+							<div class="detail-value">$0</div>
+						</div>
+						<hr
+							style={{
+								marginTop: '10px',
+								background: '#c7c7c7',
+								height: '0.8px',
+							}}
+						/>
+						<div class="detail">
+							<div class="detail-attribute">Total</div>
+							<div class="detail-value">$69.36</div>
+						</div>
                         <button type="button" class="cursor-pointer bg-[#000000] rounded-[30px] text-sm font-light h-[35px] mt-[20px] font-serif">Send order for approval</button>
                     </div>
                 </div>
