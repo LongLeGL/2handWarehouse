@@ -10,7 +10,7 @@
     border-width: 1px;
     border-color: var(--border_gray);
     border-bottom-style: solid;
-    position: fixed;
+    position: absolute;
     text-decoration: none;
 }
 
