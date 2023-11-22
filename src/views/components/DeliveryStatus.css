@@ -44,11 +44,11 @@
     font-weight: bold;
 }
 .waiting-orders{
-    width: 100%;
-    display: flex;
+    width: 60rem;
+    display: block;
     align-items: center;
     flex-direction: column;
-    
+    margin-right: 5rem;
 }
 .order{
     margin-left: 80px;
@@ -118,19 +118,9 @@
 .lower-half{
     display: flex;
     align-items: left;
-    
     flex-direction: row;
 }
-.btn{
-    background-color: #fff;
-    border: 1px solid black;
-    width: 100%;
-    color: black;
-    border-radius: 0px;
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 18px;
-}
+
 .shipping{
     font-size: 18px;
     font-weight: bold;
@@ -147,4 +137,24 @@
     align-items: left;
     flex: row;
     justify-content: space-between;
+}
+.lower-half2{
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-right: 4rem;
+}
+.btn{
+    background-color: #fff;
+    border: 1px solid black;
+    width: 100%;
+    color: black;
+    border-radius: 0px;
+    margin-top: -3rem;
+    margin-bottom: 1rem;
+    margin-left:300px;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
 }
