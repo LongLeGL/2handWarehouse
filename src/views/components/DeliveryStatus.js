@@ -21,15 +21,17 @@ function DeliveryStatus() {
 //         setUserRole(userRole);
 
 //         if(userRole === 'shipper') {
-//           fetchOrders();
+//           fetchOrders(userId);
 //         }
 //       }
 //     }, []);
 //   useEffect(() => {
-//     fetchOrders();
+//     fetchOrders(userId);
 //   }, []);
-
-  const fetchOrders = async () => {
+useEffect(() => {
+  fetchOrders(userId);
+}, []);
+  const fetchOrders = async (userId) => {
     const response = await fetch(
       `https://twohandwarehouse-v1.onrender.com/api/get-orders?id=all`
     );
@@ -214,15 +216,15 @@ function DeliveryStatus() {
                   </div>
                 </div>
               </div>
-              <div class="lower-half2">
+              <div class="lower-half3">
                 <button
-                  class="btn"
+                  class="btn1"
                   onClick={() => handlePickedup(order.id)}
                   disabled={order.status === "delivering"}
                 >
                   Picked up
                 </button>
-                <button class="btn" onClick={() => handleDelivered(order.id)}>
+                <button class="btn1" onClick={() => handleDelivered(order.id)}>
                   Delivered
                 </button>
               </div>

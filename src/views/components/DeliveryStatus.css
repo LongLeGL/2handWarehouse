@@ -46,8 +46,11 @@
 .waiting-orders{
     width: 60rem;
     display: block;
+    width: 60rem;
+    display: block;
     align-items: center;
     flex-direction: column;
+    margin-right: 5rem;
     margin-right: 5rem;
 }
 .order{
@@ -121,6 +124,7 @@
     flex-direction: row;
 }
 
+
 .shipping{
     font-size: 18px;
     font-weight: bold;
@@ -138,14 +142,14 @@
     flex: row;
     justify-content: space-between;
 }
-.lower-half2{
+.lower-half3{
     display: flex;
     align-items: left;
     justify-content: space-between;
     flex-direction: row;
     margin-right: 4rem;
 }
-.btn{
+.btn1{
     background-color: #fff;
     border: 1px solid black;
     width: 100%;
