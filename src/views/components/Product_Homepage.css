@@ -80,3 +80,6 @@
         white-space: initial;
     }
 }
+.noUnderline {
+    text-decoration: none;
+}

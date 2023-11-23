@@ -62,67 +62,53 @@ const router = createBrowserRouter([
         }}
         LatestProducts ={{
           row1: [
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP1.png"},
+            {id: 1, LPImagePath: "/images/LP1.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP2.png"},
+            {id: 2, LPImagePath: "/images/LP2.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP3.png"},
+            {id: 3, LPImagePath: "/images/LP3.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP4.png"},
+            {id: 7, LPImagePath: "/images/LP4.png"},
           ],
           row2: [
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP5.png"},
+            {id: 8, LPImagePath: "/images/LP5.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP6.png"},
+            {id: 9, LPImagePath: "/images/LP6.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP7.png"},
+            {id: 10, LPImagePath: "/images/LP7.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP8.png"},
+            {id: 1, LPImagePath: "/images/LP8.png"},
           ],
         }}
         ExploreOurProducts ={[
-          {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP1.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP2.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP3.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP4.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP5.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP6.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP7.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP8.png"},
+          { id: 1, LPImagePath: "/images/LP1.png" },
+          { id: 2, LPImagePath: "/images/LP2.png" },
+
+          { id: 3, LPImagePath: "/images/LP3.png" },
+
+          { id: 7, LPImagePath: "/images/LP4.png" },
+          { id: 8, LPImagePath: "/images/LP5.png" },
+
+          { id: 9, LPImagePath: "/images/LP6.png" },
+
+          { id: 10, LPImagePath: "/images/LP7.png" },
+
+          { id: 1, LPImagePath: "/images/LP8.png" },
         ]}
         ToptrendingProducts ={[
-          {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP1.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP2.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP3.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP4.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP5.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP6.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP7.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP8.png"},
+          { id: 1, LPImagePath: "/images/LP1.png" },
+          { id: 2, LPImagePath: "/images/LP2.png" },
+
+          { id: 3, LPImagePath: "/images/LP3.png" },
+
+          { id: 7, LPImagePath: "/images/LP4.png" },
+          { id: 8, LPImagePath: "/images/LP5.png" },
+
+          { id: 9, LPImagePath: "/images/LP6.png" },
+
+          { id: 10, LPImagePath: "/images/LP7.png" },
+
+          { id: 1, LPImagePath: "/images/LP8.png" },
         ]}
         />,
       },
