@@ -32,7 +32,7 @@ function OrderValidate() {
 
   const fetchOrders = async (userId) => {
     const response = await fetch(
-      `https://twohandwarehouse-v1.onrender.com/api/get-sell-orders?uid=${userId}`
+      `https://twohandwarehouse-v1.onrender.com/api/get-buy-orders?id=${userId}`
     );
     const data = await response.json();
     const orders = data.seller.products[0].orders;
@@ -47,7 +47,7 @@ function OrderValidate() {
     setProducts(data.seller.products);
   };
   const handleCheckoutClick = (orderId) => {
-    window.location.href = `/Checkout?id=${orderId}`;
+    window.location.href = `/2HandWarehouse/Checkout?id=${orderId}`;
   };
 
   const handleApproveOrder = async (orderId) => {

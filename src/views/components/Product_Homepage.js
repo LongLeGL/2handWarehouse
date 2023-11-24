@@ -12,7 +12,7 @@ const BlockLP = ({ block }) => {
     }, []);
     
     return(
-        <a href={`/2HandWarehouse/ViewProduct?id=itemID=${block.id}`} className="noUnderline">
+        <a href={`/2HandWarehouse/ViewProduct/${block.id}`} className="noUnderline">
             <div className="blockLP">
                 <img className="imageLP"
                     loading="lazy"

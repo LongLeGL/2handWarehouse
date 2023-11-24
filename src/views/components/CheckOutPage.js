@@ -12,12 +12,31 @@ import VnQr from "../../icons/vnpay.png"
 import Paypal from "../../icons/paypal.png"
 
 function CheckOutPage() {
+	const parsedUrl = new URL(window.location.href);
+	let orderId = parsedUrl.searchParams.get("id");
+
+	const fetchOrder = async (id) => {
+		const response = await fetch(
+		  `https://twohandwarehouse-v1.onrender.com/api/get-orders?id=${id}`
+		);
+		var data = await response.json();
+		data = data.orders;
+		setitemName(data.product.prodName);
+		setpurQuantity(data.purQuantity);
+		settotalPrice(data.userProposedPrice);
+		setshipFee(data.purShippingFee);
+		setshipAddress(data.receivingPlace);
+	};
+
+	fetchOrder(orderId);
+
+	const [itemName, setitemName] = useState("");
+	const [purQuantity, setpurQuantity] = useState(0);
+	const [totalPrice, settotalPrice] = useState(0.0);
+	const [shipFee, setshipFee] = useState();
+	const [shipAddress, setshipAddress] = useState({});
 
 	const [selected, setSelected] = useState(false)
-	const product = {
-		description: "Bucklo Wrop Wooden Table",
-		price: "109.36"
-	}
 
 	const handleApprove = (orderID) => {
 		alert("Thanks you for purchasing the item!")
@@ -59,7 +78,7 @@ function CheckOutPage() {
 								/>
 								<div className='flex flex-col gap-[8px]'>
 									<div className='text-xl text-[#1d1f1f]'>
-										Bucklo Wrop Wooden Table
+										{itemName}
 									</div>
 									<div className=' text-base text-[#5d5f5f]'>
 										Color: Brown
@@ -84,7 +103,7 @@ function CheckOutPage() {
 									</div>
 								</div>
 								<div className='grow flex justify-center'>
-									$69.36
+									${totalPrice}
 								</div>
 							</div>
 
@@ -97,11 +116,11 @@ function CheckOutPage() {
 						<div class="summary">Summary</div>
 						<div class="detail">
 							<div class="detail-attribute">Price</div>
-							<div class="detail-value">$69.36</div>
+							<div class="detail-value">${totalPrice}</div>
 						</div>
 						<div class="detail">
 							<div class="detail-attribute">Shipping cost</div>
-							<div class="detail-value">$0</div>
+							<div class="detail-value">${shipFee}</div>
 						</div>
 						<hr
 							style={{
@@ -112,7 +131,7 @@ function CheckOutPage() {
 						/>
 						<div class="detail">
 							<div class="detail-attribute">Total</div>
-							<div class="detail-value">$69.36</div>
+							<div class="detail-value">${parseFloat(totalPrice)+parseFloat(shipFee)}</div>
 						</div>
 						<PayPalButtons
 							style={{
@@ -132,9 +151,9 @@ function CheckOutPage() {
 										shipping_preference: 'SET_PROVIDED_ADDRESS',
 									},
 									purchase_units: [{
-										description: product.description,
+										description: itemName,
 										amount: {
-											value: product.price
+											value: parseFloat(totalPrice)+parseFloat(shipFee)
 										},
 										shipping: {
 											name: {
@@ -212,7 +231,7 @@ function CheckOutPage() {
 						</div>
 						<div className="flex flex-col">
 							<label for="proposed-price" className='text-2xl mb-[20px]'>Final Price</label>
-							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl  mb-[20px]' value={"$ 69.36"} />
+							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl  mb-[20px]' value={`\$${totalPrice}`} />
 						</div>
 					</div>
 				</div>

@@ -90,6 +90,7 @@ function OrderPage() {
                     console.log(data)
                     if (!data.errCode) {
                         window.alert("Order success !");
+                        window.location.href = "/2HandWarehouse/OrderValidate";
                     }
 
                 });
@@ -101,10 +102,12 @@ function OrderPage() {
         }
     }
     useEffect(() => {
-        let newtotal = 0
+        let newtotal = 0;
+        let totalPrice = 0;
         if (data) {
 
-            newtotal = (amount) ? amount * parseFloat(data.items.prodAskPrice) + shipFee : parseFloat(data.items.prodAskPrice) + shipFee;
+            newtotal = (amount) ? amount * parseFloat(data.items.prodAskPrice) : parseFloat(data.items.prodAskPrice);
+            totalPrice = newtotal + shipFee;
             console.log(data.items.prodAskPrice)
         }
         setTotal(newtotal)
@@ -225,7 +228,7 @@ function OrderPage() {
                                 <span class="checkmark-delivery"></span>
                             </label>
                             <label class="container-delivery">Shipment service
-                                <input type="radio" name="delivery-method" onClick={() => { setShipFee(50000); setShipMethod('delivery service') }} />
+                                <input type="radio" name="delivery-method" onClick={() => { setShipFee(12); setShipMethod('delivery service') }} />
                                 <span class="checkmark-delivery"></span>
                             </label>
                             <div className='ml-[74px] flex flex-col'>
