@@ -74,7 +74,7 @@ function OrderPage() {
                     quantity: amount,
                     shippingFee: shipFee,
                     shipMethod: shipMethod,
-                    buyerId: 6,
+                    buyerId: userId,
                     productId: id,
                     receivePlace: {
                         country: country,
