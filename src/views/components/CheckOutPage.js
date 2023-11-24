@@ -25,6 +25,7 @@ function CheckOutPage() {
 		setpurQuantity(data.purQuantity);
 		settotalPrice(data.userProposedPrice);
 		setshipFee(data.purShippingFee);
+		setshipMethod(data.shipMethod);
 		setshipAddress(data.receivingPlace);
 	};
 
@@ -34,14 +35,14 @@ function CheckOutPage() {
 	const [purQuantity, setpurQuantity] = useState(0);
 	const [totalPrice, settotalPrice] = useState(0.0);
 	const [shipFee, setshipFee] = useState();
+	const [shipMethod, setshipMethod] = useState("");
 	const [shipAddress, setshipAddress] = useState({});
 
 	const [selected, setSelected] = useState(false)
 
 	const handleApprove = (orderID) => {
 		alert("Thanks you for purchasing the item!")
-		window.location.href="/2HandWarehouse/Ordered";
-		// `/2HandWarehouse/Ordered?id=${orderId}`;
+		window.location.href=`/2HandWarehouse/Ordered?id=${orderId}`;
 	}
 
 	return (
@@ -82,26 +83,18 @@ function CheckOutPage() {
 									<div className='text-xl text-[#1d1f1f]'>
 										{itemName}
 									</div>
-									<div className=' text-base text-[#5d5f5f]'>
+									{/* <div className=' text-base text-[#5d5f5f]'>
 										Color: Brown
 									</div>
 									<div className='text-base text-[#5d5f5f]'>
 										Dimension: 40 x 60 cm
-									</div>
+									</div> */}
 								</div>
 							</div>
 							<div className='grow flex justify-between items-center'>
 								<div className='w-[240px] flex justify-center'>
-									<div className='rounded-2xl bg-slate-100  p-[2px]'>
-										<button className='rounded-2xl bg-white text-slate-950 flex items-center justify-between gap-[10px]'>
-											<div>
-												1
-											</div>
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-												<path d="M9 9L12 6L15 9" stroke="#042616" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M9 15L12 18L15 15" stroke="#042616" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-											</svg>
-										</button>
+									<div className='rounded-2xl p-[2px]'>
+										{purQuantity}
 									</div>
 								</div>
 								<div className='grow flex justify-center'>
@@ -193,11 +186,11 @@ function CheckOutPage() {
 					</div>
 					<div className='ml-[10px] text-gray-500'>
 						<label class="container-delivery">Self contacts
-							<input type="radio" name="delivery-method" />
+							<input type="radio" name="delivery-method" checked={shipMethod === "delivery service" ? false : true} disabled/>
 							<span class="checkmark-delivery"></span>
 						</label>
 						<label class="container-delivery">Shipment service
-							<input type="radio" name="delivery-method" />
+							<input type="radio" name="delivery-method" checked={shipMethod === "delivery service" ? true : false} disabled/>
 							<span class="checkmark-delivery"></span>
 						</label>
 						<div className='ml-[74px] flex flex-col'>
@@ -209,7 +202,7 @@ function CheckOutPage() {
 								<option value="Korea">Korea</option>
 							</select> */}
 
-							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl  mb-[20px]' value={"Vietnam"} />
+							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl  mb-[20px]' value={shipAddress.country} disabled/>
 
 							<label for="province" class="province-label" className='text-2xl mb-[20px]'>Province<span className='text-red-600 mx-[4px]'>*</span></label>
 							{/* <select id="province" name="province" class="province-input">
@@ -218,7 +211,7 @@ function CheckOutPage() {
 								<option value="Hanoi">Ha Noi</option>
 								<option value="Haiphong">Hai Phong</option>
 							</select> */}
-							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl mb-[20px]' value={"none"} />
+							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl mb-[20px]' value={shipAddress.province} disabled/>
 							<label for="city" class="city-label" className='text-2xl mb-[20px]'>City<span className='text-red-600 mx-[4px]'>*</span></label>
 							{/* <select id="city" name="city" class="city-input">
 								<option value="Thuduc">Thu Duc</option>
@@ -226,14 +219,14 @@ function CheckOutPage() {
 								<option value="Dian">Di An</option>
 								<option value="Phunhuan">Phu Nhuan</option>
 							</select> */}
-							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl mb-[20px]' value={"Ho Chi Minh city"} />
+							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl mb-[20px]' value={shipAddress.city} disabled/>
 							<label for="address" class="address-label" className='text-2xl mb-[20px]'>Address<span className='text-red-600 mx-[4px]'>*</span></label>
 							{/* <input type="text" name="address" id="address" class="address-input" required></input> */}
-							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl mb-[20px]' value={"52/26/2 Lu Gia street"} />
+							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl mb-[20px]' value={shipAddress.address} disabled/>
 						</div>
 						<div className="flex flex-col">
 							<label for="proposed-price" className='text-2xl mb-[20px]'>Final Price</label>
-							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl  mb-[20px]' value={`\$${totalPrice}`} />
+							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl  mb-[20px]' value={`\$${totalPrice}`} disabled/>
 						</div>
 					</div>
 				</div>
