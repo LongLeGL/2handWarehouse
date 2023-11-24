@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Ava from "../../icons/maleava.jpg";
 import Phone from "../../icons/phone.jpg";
+import { AlertHeading } from "react-bootstrap";
+
 function DeliveryStatus() {
   const [orders, setOrders] = useState([]);
   const [userId, setUserId] = useState(null);
@@ -60,7 +62,9 @@ function DeliveryStatus() {
         throw new Error("Network response was not ok");
       }
       // Refresh
-      fetchOrders();
+      fetchOrders(userId);
+      alert("Order status updated !");
+      window.location.reload();
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
     }
@@ -88,7 +92,9 @@ function DeliveryStatus() {
         throw new Error("Network response was not ok");
       }
 
-      fetchOrders();
+      fetchOrders(userId);
+      alert("Order status updated !");
+      window.location.reload();
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
     }

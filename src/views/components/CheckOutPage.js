@@ -40,6 +40,8 @@ function CheckOutPage() {
 
 	const handleApprove = (orderID) => {
 		alert("Thanks you for purchasing the item!")
+		window.location.href="/2HandWarehouse/Ordered";
+		// `/2HandWarehouse/Ordered?id=${orderId}`;
 	}
 
 	return (
