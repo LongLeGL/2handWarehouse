@@ -62,84 +62,67 @@ const router = createBrowserRouter([
         }}
         LatestProducts ={{
           row1: [
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP1.png"},
+            {id: 1, LPImagePath: "/images/LP1.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP2.png"},
+            {id: 2, LPImagePath: "/images/LP2.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP3.png"},
+            {id: 3, LPImagePath: "/images/LP3.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP4.png"},
+            {id: 7, LPImagePath: "/images/LP4.png"},
           ],
           row2: [
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP5.png"},
+            {id: 8, LPImagePath: "/images/LP5.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP6.png"},
+            {id: 9, LPImagePath: "/images/LP6.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP7.png"},
+            {id: 10, LPImagePath: "/images/LP7.png"},
 
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP8.png"},
+            {id: 1, LPImagePath: "/images/LP8.png"},
           ],
         }}
         ExploreOurProducts ={[
-          {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP1.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP2.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP3.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP4.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP5.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP6.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP7.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP8.png"},
+          { id: 1, LPImagePath: "/images/LP1.png" },
+          { id: 2, LPImagePath: "/images/LP2.png" },
+
+          { id: 3, LPImagePath: "/images/LP3.png" },
+
+          { id: 7, LPImagePath: "/images/LP4.png" },
+          { id: 8, LPImagePath: "/images/LP5.png" },
+
+          { id: 9, LPImagePath: "/images/LP6.png" },
+
+          { id: 10, LPImagePath: "/images/LP7.png" },
+
+          { id: 1, LPImagePath: "/images/LP8.png" },
         ]}
         ToptrendingProducts ={[
-          {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP1.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP2.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP3.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP4.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP5.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP6.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP7.png"},
-            {LPname: "Bucklo Wrop Wooden Table", LPprice: "$56.12", 
-            LPaddress:"TP. Hồ Chí Minh", LPImagePath: "/images/LP8.png"},
+          { id: 1, LPImagePath: "/images/LP1.png" },
+          { id: 2, LPImagePath: "/images/LP2.png" },
+
+          { id: 3, LPImagePath: "/images/LP3.png" },
+
+          { id: 7, LPImagePath: "/images/LP4.png" },
+          { id: 8, LPImagePath: "/images/LP5.png" },
+
+          { id: 9, LPImagePath: "/images/LP6.png" },
+
+          { id: 10, LPImagePath: "/images/LP7.png" },
+
+          { id: 1, LPImagePath: "/images/LP8.png" },
         ]}
         />,
       },
       {
-        path: "/2HandWarehouse/ViewProduct",
+        path: "/2HandWarehouse/ViewProduct/:id",
         element: <ProductViewing
           mainImage={[{ id: '1', url: "https://down-vn.img.susercontent.com/file/c3c76a6e6bc7557377c4ac31adcff646" },
           { id: '2', url: "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-llt6afd17vtrba" },
           { id: '3', url: "https://down-vn.img.susercontent.com/file/bbf41598d31e6414c79e2ea327a55d7c" },
           { id: '4', url: "https://down-vn.img.susercontent.com/file/sg-11134201-22120-b5nywz8t4jkv30" }]}          
-          name=""
-          price=""
-          rate={5}
-          description=""
-          location=""
-          contact={[{ phone: "" }, { addr: "" }]}
+          // id="1"
+         
         />,
+        
       },
       {
         path: "/2HandWarehouse/PostItem",
@@ -154,7 +137,7 @@ const router = createBrowserRouter([
         element: <ResultPage/>,
       },
       {
-        path: "/2HandWarehouse/Order",
+        path: "/2HandWarehouse/Order/:id",
         element: <OrderPage/>,
       },
       {

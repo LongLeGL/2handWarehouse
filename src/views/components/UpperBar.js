@@ -26,18 +26,17 @@ const loginModalStyles = {
 ReactModal.setAppElement('#root');
 
 function UpperBar (props) {
-	const username = sessionStorage.getItem('username');
+	const username = sessionStorage.getItem('userFullName');
+	console.log("Upper bar retreived full name:", username);
 	const navigate = useNavigate()
 	const [searchResults, setResults] = useState([]);
 
 	function onclUpperBarUserBtn (){
 		if (username){
-			sessionStorage.setItem('username', '');
-			window.location.href = '2HandWarehouse/Home';
+			window.location.href = '/2HandWarehouse/DeliveryStatus';
 		}
 		else {
 			openModal('login');
-			// navigate('Login');
 		}
 	}
 
@@ -56,7 +55,7 @@ function UpperBar (props) {
 
 	function afterOpenModal() {
 		// references are now sync'd and can be accessed.
-		subtitle.style.color = 'red';
+		// subtitle.style.color = 'red';
 	}
 
 	function closeModal(selection) {
@@ -86,7 +85,9 @@ function UpperBar (props) {
 
 				<div className='upperBarBtns'>
 					<button id="cartBtn" onClick={null}><FontAwesomeIcon icon={faCartShopping} /></button>
-					<button className='BarLoginButton' onClick={onclUpperBarUserBtn}><FontAwesomeIcon icon={faUser} />{(username) ? username: 'Sign in'}</button>
+					<button className='BarLoginButton' onClick={onclUpperBarUserBtn}><FontAwesomeIcon icon={faUser} />
+						{(username) ? username: 'Sign in'}
+					</button>
 				</div>
 			</div>
 
