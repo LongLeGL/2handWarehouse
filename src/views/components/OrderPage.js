@@ -108,7 +108,7 @@ function OrderPage() {
         if (data) {
             total = (amount) ? amount * parseFloat(data.items.prodAskPrice) : parseFloat(data.items.prodAskPrice);
             // finaltotal = total + shipFee;
-            console.log(data.items.prodQuantity)
+            // console.log(data.items.prodQuantity)
         }
         setTotal(total)
         // setFinalTotal(finaltotal)
