@@ -5,21 +5,31 @@ import CartAmountToggle from "./CartAmountToggle";
 import { NavLink } from "react-router-dom";
 
 
-const AddToCart = ({ product }) => {
-  const { id, stock } = product;
-  console.log("id:", id);
-  console.log("stock:", stock);
-console.log(product);
+const AddToCart = ({ product, onChildClick }) => {
+  const { stock } = product;
+  //   console.log("id:", id);
+  //   console.log("stock:", stock);
+  // console.log(product);
 
   const [amount, setAmount] = useState(1);
 
   const setDecrease = () => {
     amount > 1 ? setAmount(amount - 1) : setAmount(1);
+    onChildClick(amount - 1);
   };
 
   const setIncrease = () => {
     amount < stock ? setAmount(amount + 1) : setAmount(stock);
+    onChildClick(amount + 1);
+
   };
+
+
+  // const handleClick = () => {
+  //   // Gửi trạng thái từ thành phần con lên thành phần cha
+  //    onChildClick(amount);
+  // };
+
 
   return (
     <Wrapper>
@@ -45,6 +55,7 @@ console.log(product);
         amount={amount}
         setDecrease={setDecrease}
         setIncrease={setIncrease}
+        // handleClick= {handleClick}
       />
 
       {/* <NavLink to="/cart">
@@ -89,11 +100,11 @@ const Wrapper = styled.section`
   /* we can use it as a global one too  */
   .amount-toggle {
     // margin-top: 3rem;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.4rem;
+    font-size: 1rem;
 
     button {
       border: none;
