@@ -5,32 +5,24 @@ import Ava from "../../icons/maleava.jpg";
 import Phone from "../../icons/phone.jpg";
 function DeliveryStatus() {
   const [orders, setOrders] = useState([]);
+  const [userId, setUserId] = useState(null);
+  const [userRole, setUserRole] = useState("");
+  useEffect(() => {
+      const userId = sessionStorage.getItem('userId');
+      const userRole = sessionStorage.getItem('userRole');
+      console.log("UserID",userId);
+      console.log("UserRole",userRole);
+      if(userId && userRole) {
+        setUserId(userId);
+        setUserRole(userRole);
+        console.log("UserID",userId);
+        console.log("Userrole",userRole);
+        if(userRole === 'shipper') {
+          fetchOrders(userId);
+        }
+      }
+    }, []);
 
-  // Hardcode userId,userRole
-  const userId = 4;
-  const userRole = "shipper";
-
-/*Giữ*/
-//   const [userId, setUserId] = useState(null);
-//   const [userRole, setUserRole] = useState("");
-// //   useEffect(() => {
-//     //   const userId = sessionStorage.getItem('userId');
-//     //   const userRole = sessionStorage.getItem('userRole');
-//       if(userId && userRole) {
-//         setUserId(userId);
-//         setUserRole(userRole);
-
-//         if(userRole === 'shipper') {
-//           fetchOrders(userId);
-//         }
-//       }
-//     }, []);
-//   useEffect(() => {
-//     fetchOrders(userId);
-//   }, []);
-useEffect(() => {
-  fetchOrders(userId);
-}, []);
   const fetchOrders = async (userId) => {
     const response = await fetch(
       `https://twohandwarehouse-v1.onrender.com/api/get-orders?id=all`
@@ -39,7 +31,8 @@ useEffect(() => {
     const filteredOrders = data.orders.filter(
       (order) =>
         order.shipperId === userId ||
-        (order.shipper === null && order.status !== "waiting")
+        order.shipper === null
+        // (order.shipper === null && order.status !== "waiting")
     );
     const orders = filteredOrders;
     setOrders(filteredOrders);
