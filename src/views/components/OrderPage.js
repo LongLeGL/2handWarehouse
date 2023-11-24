@@ -18,9 +18,11 @@ function OrderPage() {
     // const [contact, setContact] = useState(0);
     // const [deliver, setDeliver] = useState(0);
     const [total, setTotal] = useState(0);
+    // const [finalTotal, setFinalTotal] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
     const { id } = useParams();
     const [err, setErr] = useState('');
+    const navigate = useNavigate();
     const product = {
         description: "Bucklo Wrop Wooden Table",
         price: "109.36"
@@ -90,6 +92,7 @@ function OrderPage() {
                     console.log(data)
                     if (!data.errCode) {
                         window.alert("Order success !");
+                        navigate('/2HandWarehouse/OrderValidate');
                     }
 
                 });
@@ -101,13 +104,14 @@ function OrderPage() {
         }
     }
     useEffect(() => {
-        let newtotal = 0
+        let total = 0
         if (data) {
-
-            newtotal = (amount) ? amount * parseFloat(data.items.prodAskPrice) + shipFee : parseFloat(data.items.prodAskPrice) + shipFee;
-            console.log(data.items.prodAskPrice)
+            total = (amount) ? amount * parseFloat(data.items.prodAskPrice) : parseFloat(data.items.prodAskPrice);
+            // finaltotal = total + shipFee;
+            console.log(data.items.prodQuantity)
         }
-        setTotal(newtotal)
+        setTotal(total)
+        // setFinalTotal(finaltotal)
     }, [amount, data]);
 
     if (data) {
@@ -170,7 +174,7 @@ function OrderPage() {
                                                     <path d="M9 9L12 6L15 9" stroke="#042616" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                                                     <path d="M9 15L12 18L15 15" stroke="#042616" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                                                 </svg> */}
-                                                <AddToCart product={{ stock: 100 }} onChildClick={handleChildClick} />
+                                                <AddToCart product={{ stock: item.prodQuantity }} onChildClick={handleChildClick} />
 
                                             </div>
 
@@ -190,7 +194,7 @@ function OrderPage() {
                             <div class="summary">Summary</div>
                             <div class="detail">
                                 <div class="detail-attribute">Price</div>
-                                <div class="detail-value">{item.prodAskPrice}</div>
+                                <div class="detail-value">{total}</div>
                             </div>
                             <div class="detail">
                                 <div class="detail-attribute">Shipping cost</div>
@@ -205,7 +209,7 @@ function OrderPage() {
                             />
                             <div class="detail">
                                 <div class="detail-attribute">Total</div>
-                                <div class="detail-value">${total}</div>
+                                <div class="detail-value">${total + shipFee}</div>
                             </div>
                             <button type="button" class="cursor-pointer bg-[#000000] rounded-[30px] text-sm font-light h-[35px] mt-[20px] font-serif"
                                 onClick={handlefetch}>Send order for approval</button>
@@ -225,7 +229,7 @@ function OrderPage() {
                                 <span class="checkmark-delivery"></span>
                             </label>
                             <label class="container-delivery">Shipment service
-                                <input type="radio" name="delivery-method" onClick={() => { setShipFee(50000); setShipMethod('delivery service') }} />
+                                <input type="radio" name="delivery-method" onClick={() => { setShipFee(12.00); setShipMethod('delivery service') }} />
                                 <span class="checkmark-delivery"></span>
                             </label>
                             <div className='ml-[74px] flex flex-col'>
