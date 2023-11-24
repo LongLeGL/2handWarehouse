@@ -4,50 +4,43 @@ import { useNavigate, Link } from "react-router-dom";
 import Ava from "../../icons/maleava.jpg";
 import Phone from "../../icons/phone.jpg";
 function OrderValidate() {
-  const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
   const [userRole, setUserRole] = useState(null);
   const [username, setUsername] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
 
-    // Hardcode userId
-    const userId = 1;
-
-  // const [userId, setUserId] = useState(null);
-  // useEffect(() => {
-  //     const id = sessionStorage.getItem('userId');
-  //     const role = sessionStorage.getItem('userRole');
-  //     if(id && role) {
-  //       setUserId(id);
-  //       setUserRole(role);
-  //       if(role !== 'shipper') {
-  //         fetchOrders(id);
-  //       }
-  //     }
-  //   }, []);
+  const [userId, setUserId] = useState(null);
   useEffect(() => {
-    fetchOrders(userId);
-  }, []);
+      const userId = sessionStorage.getItem('userId');
+      const userRole = sessionStorage.getItem('userRole');
+      console.log("UserID",userId);
+      console.log("UserRole",userRole);
+      if(userId && userRole) {
+        setUserId(userId);
+        setUserRole(userRole);
+        if(userRole !== 'shipper') {
+          fetchOrders(userId);
+        }
+      }
+    }, []);
 
   const fetchOrders = async (userId) => {
     const response = await fetch(
-      `https://twohandwarehouse-v1.onrender.com/api/get-sell-orders?uid=${userId}`
+      `https://twohandwarehouse-v1.onrender.com/api/get-buy-orders?id=${userId}`
     );
     const data = await response.json();
-    const orders = data.seller.products[0].orders;
-    setOrders(data.seller.products[0].orders);
-    const username = data.seller.username;
+    const orders = data.buyer.orders;
+    setOrders(data.buyer.orders);
+    const username = data.buyer.username;
     setUsername(username); // Set the username in the state
-    const phoneNumber = data.seller.phoneNumber;
-    setPhoneNumber(data.seller.phoneNumber); // Replace 'phoneNumber' with the actual key from your data
-    const email = data.seller.email;
-    setEmail(data.seller.email); // Replace 'email' with the actual key from your data
-    const products = data.seller.products;
-    setProducts(data.seller.products);
+    const phoneNumber = data.buyer.phoneNumber;
+    setPhoneNumber(data.buyer.phoneNumber); // Replace 'phoneNumber' with the actual key from your data
+    const email = data.buyer.email;
+    setEmail(data.buyer.email); // Replace 'email' with the actual key from your data
   };
   const handleCheckoutClick = (orderId) => {
-    window.location.href = `/Checkout?id=${orderId}`;
+    window.location.href = `2HandWarehouse/Checkout?id=${orderId}`;
   };
 
   const handleApproveOrder = async (orderId) => {
@@ -136,11 +129,9 @@ function OrderValidate() {
             Waiting approval
           </div>
         </div>
-        {products.map((product, productIndex) => (
-          <div key={productIndex}>
             {/* Render other product details as needed */}
             <div>
-              {product.orders.map((order, orderIndex) => (
+              {orders.map((order, orderIndex) => (
                 <div className="orders" key={orderIndex}>
                   {/* Render order details based on the structure of your orders data */}
                   <div className="upper-half">
@@ -153,7 +144,7 @@ function OrderValidate() {
                           marginLeft: "8px",
                         }}
                       />
-                      <div class="product-name"> {product.prodName}</div>
+                      <div class="product-name"> {order.product.prodName}</div>
                     </div>
                     <div class="upper-right">
                       <div class="upper-right-half">
@@ -162,7 +153,7 @@ function OrderValidate() {
                       </div>
                       <div class="upper-right-half">
                         <div class="asking">Asking price:</div>
-                        <div class="price">đ {product.prodAskPrice * 1000}</div>
+                        <div class="price">đ {order.product.prodAskPrice * 1000}</div>
                       </div>
                       <div class="upper-right-half">
                         <div class="asking" style={{ marginTop: "0px" }}>
@@ -276,8 +267,7 @@ function OrderValidate() {
                 </div>
               ))}
             </div>
-          </div>
-        ))}
+
       </div>
     </div>
   );
