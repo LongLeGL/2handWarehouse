@@ -11,28 +11,24 @@ function OrderValidate() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
 
-    // Hardcode userId
-    const userId = 1;
-
-  // const [userId, setUserId] = useState(null);
-  // useEffect(() => {
-  //     const id = sessionStorage.getItem('userId');
-  //     const role = sessionStorage.getItem('userRole');
-  //     if(id && role) {
-  //       setUserId(id);
-  //       setUserRole(role);
-  //       if(role !== 'shipper') {
-  //         fetchOrders(id);
-  //       }
-  //     }
-  //   }, []);
+  const [userId, setUserId] = useState(null);
   useEffect(() => {
-    fetchOrders(userId);
-  }, []);
+      const userId = sessionStorage.getItem('userId');
+      const userRole = sessionStorage.getItem('userRole');
+      console.log("UserID",userId);
+      console.log("UserRole",userRole);
+      if(userId && userRole) {
+        setUserId(userId);
+        setUserRole(userRole);
+        if(userRole !== 'shipper') {
+          fetchOrders(userId);
+        }
+      }
+    }, []);
 
   const fetchOrders = async (userId) => {
     const response = await fetch(
-      `https://twohandwarehouse-v1.onrender.com/api/get-sell-orders?uid=${userId}`
+      `https://twohandwarehouse-v1.onrender.com/api/get-sell-orders?id=${userId}`
     );
     const data = await response.json();
     const orders = data.seller.products[0].orders;
