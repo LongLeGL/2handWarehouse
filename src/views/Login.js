@@ -9,14 +9,38 @@ function Login() {
   const [password, setPassword] = useState("");
   const [errMsg, seterrMsg] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     seterrMsg('');
     if (!email) seterrMsg("Username or Email required !");
     else if (!password) seterrMsg("Password required !");
     else {
       // perform authentication
-      console.log('authenticating...')
+      let logindata = {email:email,password:password};
+      console.log("Authenticating:", logindata);
+
+      const response = await fetch("https://twohandwarehouse-v1.onrender.com/api/login", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(logindata),
+      });
+      const responseData = await response.json();
+      
+      if (responseData.errCode === 1){
+        seterrMsg("Incorrect password or Email !")
+      }
+      else{
+        console.log("Got user:",responseData.user);
+        sessionStorage.setItem("userId", responseData.user.id);
+        sessionStorage.setItem("username", responseData.user.email);
+        sessionStorage.setItem("userFullName", responseData.user.firstName + ' ' + responseData.user.lastName);
+        sessionStorage.setItem("userRole", responseData.user.roleId);
+        sessionStorage.setItem("userPhone", responseData.user.phoneNumber);
+        window.location.reload();
+      }
     }
   }
 
