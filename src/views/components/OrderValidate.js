@@ -153,14 +153,14 @@ function OrderValidate() {
                       </div>
                       <div class="upper-right-half">
                         <div class="asking">Asking price:</div>
-                        <div class="price">$ {order.product.prodAskPrice * order.purQuantity}</div>
+                        <div class="price">đ {order.product.prodAskPrice * 1000}</div>
                       </div>
                       <div class="upper-right-half">
                         <div class="asking" style={{ marginTop: "0px" }}>
                           Proposed price:
                         </div>
                         <div class="price" style={{ marginTop: "0px" }}>
-                          $ {order.userProposedPrice*1}
+                          đ {order.userProposedPrice * 1000}
                         </div>
                       </div>
                     </div>{" "}
