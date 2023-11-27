@@ -136,7 +136,7 @@ function OrderPage() {
                                         Quantity
                                     </div>
                                     <div className='grow flex justify-center'>
-                                        Asking Price Total
+                                        Asking Price
                                     </div>
                                 </div>
                             </div>
@@ -155,12 +155,12 @@ function OrderPage() {
                                         <div className='text-xl text-[#1d1f1f]'>
                                             {item.prodName}
                                         </div>
-                                        <div className=' text-base text-[#5d5f5f]'>
+                                        {/* <div className=' text-base text-[#5d5f5f]'>
                                             Color: Brown
                                         </div>
                                         <div className='text-base text-[#5d5f5f]'>
                                             Dimension: 40 x 60 cm
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                                 <div className='grow flex justify-between items-center'>
@@ -193,8 +193,12 @@ function OrderPage() {
                         <div class="flex flex-col w-full p-[20px] bg-white rounded-lg">
                             <div class="summary">Summary</div>
                             <div class="detail">
-                                <div class="detail-attribute">Price</div>
+                                <div class="detail-attribute">Asking Price Total</div>
                                 <div class="detail-value">{total}</div>
+                            </div>
+                            <div class="detail">
+                                <div class="detail-attribute">Proposed Price</div>
+                                <div class="detail-value">{proposedPrice}</div>
                             </div>
                             <div class="detail">
                                 <div class="detail-attribute">Shipping cost</div>
@@ -209,7 +213,7 @@ function OrderPage() {
                             />
                             <div class="detail">
                                 <div class="detail-attribute">Total</div>
-                                <div class="detail-value">${total + shipFee}</div>
+                                <div class="detail-value">${parseFloat(proposedPrice) + parseFloat(shipFee)}</div>
                             </div>
                             <button type="button" class="cursor-pointer bg-[#000000] rounded-[30px] text-sm font-light h-[35px] mt-[20px] font-serif"
                                 onClick={handlefetch}>Send order for approval</button>

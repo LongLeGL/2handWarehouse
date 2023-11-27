@@ -15,6 +15,13 @@ function CheckOutPage() {
 	const parsedUrl = new URL(window.location.href);
 	let orderId = parsedUrl.searchParams.get("id");
 
+	const [itemName, setitemName] = useState("");
+	const [purQuantity, setpurQuantity] = useState(0);
+	const [totalPrice, settotalPrice] = useState(0.0);
+	const [shipFee, setshipFee] = useState();
+	const [shipMethod, setshipMethod] = useState("");
+	const [shipAddress, setshipAddress] = useState({});
+
 	const fetchOrder = async (id) => {
 		const response = await fetch(
 		  `https://twohandwarehouse-v1.onrender.com/api/get-orders?id=${id}`
@@ -31,16 +38,10 @@ function CheckOutPage() {
 
 	fetchOrder(orderId);
 
-	const [itemName, setitemName] = useState("");
-	const [purQuantity, setpurQuantity] = useState(0);
-	const [totalPrice, settotalPrice] = useState(0.0);
-	const [shipFee, setshipFee] = useState();
-	const [shipMethod, setshipMethod] = useState("");
-	const [shipAddress, setshipAddress] = useState({});
-
 	const [selected, setSelected] = useState(false)
 
-	const handleApprove = async (orderId) => {
+	const handleApprove = async (transactID) => {
+		console.log("Called approve", orderId)
 		try {
 			const data = {
 				id: orderId,
@@ -61,7 +62,7 @@ function CheckOutPage() {
 				throw new Error("Order status update failed");
 			}
 			// Success
-			alert("Thanks you for purchasing the item!")
+			console.log("Checkout completed")
 			window.location.href=`/2HandWarehouse/Ordered?id=${orderId}`;
 		} catch (error) {
 		  	console.error("There was a problem with the fetch operation:", error);
