@@ -40,10 +40,33 @@ function CheckOutPage() {
 
 	const [selected, setSelected] = useState(false)
 
-	const handleApprove = (orderID) => {
-		alert("Thanks you for purchasing the item!")
-		window.location.href=`/2HandWarehouse/Ordered?id=${orderId}`;
-	}
+	const handleApprove = async (orderId) => {
+		try {
+			const data = {
+				id: orderId,
+				status: "processing",
+			};
+
+			const response = await fetch(
+				`https://twohandwarehouse-v1.onrender.com/api/update-order`,
+				{
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+				}
+			);
+			if (!response.ok) {
+				throw new Error("Order status update failed");
+			}
+			// Success
+			alert("Thanks you for purchasing the item!")
+			window.location.href=`/2HandWarehouse/Ordered?id=${orderId}`;
+		} catch (error) {
+		  	console.error("There was a problem with the fetch operation:", error);
+		}
+	};
 
 	return (
 		<div className='CheckOutPage'>
