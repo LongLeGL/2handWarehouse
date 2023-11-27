@@ -89,7 +89,7 @@ function CheckOutPage() {
 									Quantity
 								</div>
 								<div className='grow flex justify-center'>
-									Asking Price Total
+									Final Price
 								</div>
 							</div>
 						</div>
@@ -247,10 +247,6 @@ function CheckOutPage() {
 							<label for="address" class="address-label" className='text-2xl mb-[20px]'>Address<span className='text-red-600 mx-[4px]'>*</span></label>
 							{/* <input type="text" name="address" id="address" class="address-input" required></input> */}
 							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl mb-[20px]' value={shipAddress.address} disabled/>
-						</div>
-						<div className="flex flex-col">
-							<label for="proposed-price" className='text-2xl mb-[20px]'>Final Price</label>
-							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl  mb-[20px]' value={`\$${totalPrice}`} disabled/>
 						</div>
 					</div>
 				</div>
