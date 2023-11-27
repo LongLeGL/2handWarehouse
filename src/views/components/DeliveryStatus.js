@@ -53,7 +53,6 @@ function DeliveryStatus() {
       `https://twohandwarehouse-v1.onrender.com/api/get-buy-orders?id=${userId}`
     );
     const data = await response.json();
-    console.log(data);
     const filteredOrders = data.buyer.orders.filter(
       (order) =>
         order.status !== "waiting" && order.status !== "approved" && order.status !== "rejected"
