@@ -16,6 +16,13 @@ function ProductViewing(props) {
     const [data, setData] = useState(null);
     const [all, setDataAll] = useState(null);
     const { id } = useParams();
+    // let mainImage = [
+    //     { id: '1', url: `https://down-vn.img.susercontent.com/file/c3c76a6e6bc7557377c4ac31adcff646` },
+    //     { id: '2', url: "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-llt6afd17vtrba" },
+    //     { id: '3', url: "https://down-vn.img.susercontent.com/file/bbf41598d31e6414c79e2ea327a55d7c" },
+    //     { id: '4', url: "https://down-vn.img.susercontent.com/file/sg-11134201-22120-b5nywz8t4jkv30" }
+    // ]
+
     useEffect(() => {
         // Function to fetch data when the component mounts
         console.log(id)
@@ -68,6 +75,12 @@ function ProductViewing(props) {
 
     if (data) {
         let item = data.items
+        let mainImage = [
+            { id: '1', url: process.env.PUBLIC_URL + item.images[0].url },
+            { id: '2', url: item.images[1].url },
+            { id: '3', url: item.images[2].url },
+            { id: '4', url: item.images[3].url }
+        ]
         if (all) {
             let items = all.items
             return (
@@ -78,11 +91,11 @@ function ProductViewing(props) {
                                 <div className="overlap-3">
                                     <div className="product">
                                         <div className="rectangle">
-                                            <MyImage imgs={props.mainImage} />
+                                            <MyImage imgs={mainImage} />
                                         </div>
                                         <p className="p">{item.prodName}</p>
                                         <div className="rating-large-solid-instance">
-                                            <Star stars={4.7} reviews={90} />
+                                            <Star stars={Math.floor(Math.random() * 51 + 10)/10.0} reviews={Math.floor(Math.random() * 1001)} />
                                         </div>
                                         <div className="text-wrapper-9">{item.prodAskPrice} USD</div>
                                         <div className="overlap-group-2">
@@ -151,16 +164,16 @@ function ProductViewing(props) {
                                 <div className="text-wrapper-15">Related Products</div>
 
                                 <div className="product-2">
-                                    <Product key={items[0].id} curElem={{ id: items[0].id, item: items[0], image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }}></Product>
+                                    <Product key={items[0].id} curElem={{ id: items[0].id, item: items[0], image: items[0].images[1].url }}></Product>
                                 </div>
                                 <div className="product-3">
-                                    <Product key={items[1].id} curElem={{ id: items[1].id, item: items[1], image: "https://down-vn.img.susercontent.com/file/807da9291d743019ec02fa95ac392b6c" }}></Product>
+                                    <Product key={items[1].id} curElem={{ id: items[1].id, item: items[1], image: items[1].images[1].url }}></Product>
                                 </div>
                                 <div className="product-4">
-                                    <Product key={items[2].id} curElem={{ id: items[2].id, item: items[2], image: "https://down-vn.img.susercontent.com/file/208db6bb03eb0a3b2dbebce4f25c2242" }}></Product>
+                                    <Product key={items[2].id} curElem={{ id: items[2].id, item: items[2], image: items[2].images[1].url }}></Product>
                                 </div>
                                 <div className="product-5">
-                                    <Product key={items[3].id} curElem={{ id: items[3].id, item: items[3], image: "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lheblg07odf72b" }}></Product>
+                                    <Product key={items[3].id} curElem={{ id: items[3].id, item: items[3], image: items[3].images[1].url }}></Product>
                                 </div>
 
                             </div>

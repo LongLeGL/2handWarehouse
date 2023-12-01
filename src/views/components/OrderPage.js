@@ -147,10 +147,13 @@ function OrderPage() {
                         <div className='w-full h-full p-[1px]'>
                             <div className='w-full h-full bg-white flex items-center justify-between'>
                                 <div className=' flex items-center justify-start pl-[94px] w-[450px]'>
-                                    <img
-                                        src={CheckoutItem}
-                                        alt='checkout item table'
-                                    />
+                                    <div className="order-img">
+                                        <img
+                                            src={process.env.PUBLIC_URL + item.images[0].url}
+                                            alt='checkout item table'
+                                        />
+                                    </div>
+
                                     <div className='flex flex-col gap-[8px]'>
                                         <div className='text-xl text-[#1d1f1f]'>
                                             {item.prodName}

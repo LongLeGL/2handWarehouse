@@ -19,8 +19,9 @@ import OrderValidate from './views/components/OrderValidate';
 import DeliveryStatus from './views/components/DeliveryStatus';
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
+
 const router = createBrowserRouter([
-  {
+  {    
     path: "/2HandWarehouse",
     element: <App/>,
     children: [
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
         path: "/2HandWarehouse/Home",
         element: <HomePage
         PopularCatalogue={[
-          {id: 1, imagePath: "/images/GroupPhone.png", text: "Phone"},
+          {id: 1, imagePath: "/images/${tmp}/GroupPhone.png", text: "Phone"},
           {id: 2, imagePath: "/images/GroupCar.png", text: "Car"},
           {id: 3, imagePath: "/images/GroupFruits.png", text: "Fruits"},
           {id: 4, imagePath: "/images/GroupBathroom.png", text: "Bathroom"},
@@ -68,16 +69,16 @@ const router = createBrowserRouter([
 
             {id: 3, LPImagePath: "/images/LP3.png"},
 
-            {id: 7, LPImagePath: "/images/LP4.png"},
+            {id: 4, LPImagePath: "/images/LP4.png"},
           ],
           row2: [
-            {id: 8, LPImagePath: "/images/LP5.png"},
+            {id: 5, LPImagePath: "/images/LP5.png"},
 
-            {id: 9, LPImagePath: "/images/LP6.png"},
+            {id: 6, LPImagePath: "/images/LP6.png"},
 
-            {id: 10, LPImagePath: "/images/LP7.png"},
+            {id: 7, LPImagePath: "/images/LP7.png"},
 
-            {id: 1, LPImagePath: "/images/LP8.png"},
+            {id: 8, LPImagePath: "/images/LP8.png"},
           ],
         }}
         ExploreOurProducts ={[
