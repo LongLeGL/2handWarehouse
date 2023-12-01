@@ -40,10 +40,35 @@ function CheckOutPage() {
 
 	const [selected, setSelected] = useState(false)
 
-	const handleApprove = (orderID) => {
-		alert("Thanks you for purchasing the item!")
-		window.location.href=`/2HandWarehouse/Ordered?id=${orderId}`;
-	}
+	const handleApprove = async (transactID) => {
+		console.log("Handling approval for order:", orderId);
+		try {
+		  const data = {
+			id: orderId,
+			status: "processing",
+		  };
+		  const response = await fetch(
+			`https://twohandwarehouse-v1.onrender.com/api/update-order`,
+			{
+			  method: "PUT",
+			  headers: {
+				"Content-Type": "application/json",
+			  },
+			  body: JSON.stringify(data),
+			}
+		  );
+	
+		  if (!response.ok) {
+			throw new Error("Network response was not ok");
+		  }
+	
+		  // Success
+		  console.log("Order statusupdated successfully");
+		  window.location.href=`/2HandWarehouse/Ordered?id=${orderId}`;
+		} catch (error) {
+		  console.error("There was a problem with the fetch operation:", error);
+		}
+	  };
 
 	return (
 		<div className='CheckOutPage'>
@@ -64,7 +89,7 @@ function CheckOutPage() {
 									Quantity
 								</div>
 								<div className='grow flex justify-center'>
-									Asking Price Total
+									Final Price
 								</div>
 							</div>
 						</div>
@@ -169,8 +194,7 @@ function CheckOutPage() {
 
 							onApprove={async (data, actions) => {
 								const order = await actions.order?.capture()
-								console.log("order: ", order)
-
+								// console.log("Transaction order: ", order)
 								handleApprove(data.orderID)
 							}}
 						/>
@@ -223,10 +247,6 @@ function CheckOutPage() {
 							<label for="address" class="address-label" className='text-2xl mb-[20px]'>Address<span className='text-red-600 mx-[4px]'>*</span></label>
 							{/* <input type="text" name="address" id="address" class="address-input" required></input> */}
 							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl mb-[20px]' value={shipAddress.address} disabled/>
-						</div>
-						<div className="flex flex-col">
-							<label for="proposed-price" className='text-2xl mb-[20px]'>Final Price</label>
-							<input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl  mb-[20px]' value={`\$${totalPrice}`} disabled/>
 						</div>
 					</div>
 				</div>

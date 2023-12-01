@@ -6,6 +6,9 @@ import Phone from "../../icons/phone.jpg";
 import { AlertHeading } from "react-bootstrap";
 
 function DeliveryStatus() {
+  var uFullName = sessionStorage.getItem('userFullName');
+  var uPhone = sessionStorage.getItem('userPhone');
+  var uEmail = sessionStorage.getItem('username');
   const [orders, setOrders] = useState([]);
   const [userId, setUserId] = useState(null);
   const [userRole, setUserRole] = useState("");
@@ -46,6 +49,8 @@ function DeliveryStatus() {
     setOrders(filteredOrders);
     console.log(orders);
   };
+
+  
   // User is not shipper
   const fetchOrdersUser = async (userId) => {
     const response = await fetch(
@@ -173,9 +178,9 @@ function DeliveryStatus() {
             marginTop: "80px",
           }}
         />
-        <div class="profile-data">Le Hoang Long</div>
-        <div class="profile-data">0923423235</div>
-        <div class="profile-data">lehoanglong@gmail.com</div>
+        <div class="profile-data">{uFullName}</div>
+        <div class="profile-data">{uPhone}</div>
+        <div class="profile-data">{uEmail}</div>
       </div>
       <div class="Content">
         <div class="nav-bar-1">
@@ -190,7 +195,7 @@ function DeliveryStatus() {
           <div class="nav-2" style={{ color: "#FF5F00" }}>
             Delivering orders
           </div>
-          <div class="nav-2">Waiting approval</div>
+          <div class="nav-2"><a href="/2HandWarehouse/OrderValidate">Waiting approval</a></div>
         </div>
         {/* User is shipper */}
         {isShipper && <div class="waiting-orders">
@@ -242,7 +247,7 @@ function DeliveryStatus() {
                         Proposed price:
                       </div>
                       <div class="price" style={{ marginTop: "50px" }}>
-                        đ {order.userProposedPrice * 1000}
+                        ${order.userProposedPrice}
                       </div>
                     </div>
                   </div>
@@ -262,7 +267,7 @@ function DeliveryStatus() {
                       </div>
                       <div class="cost" style={{ marginTop: "50px" }}>
                         {" "}
-                        đ {order.purShippingFee * 1000}
+                        ${order.purShippingFee}
                       </div>
                     </div>
                     <div class="lower-right-half">
@@ -271,9 +276,8 @@ function DeliveryStatus() {
                       </div>
                       <div class="cost" style={{ marginTop: "50px" }}>
                         {" "}
-                        đ{" "}
-                        {order.purShippingFee * 1000 +
-                          order.userProposedPrice * 1000}{" "}
+                        ${" "}
+                        {parseFloat(order.purShippingFee )+ parseFloat(order.userProposedPrice)}{" "}
                       </div>
                     </div>
                   </div>
@@ -313,6 +317,23 @@ function DeliveryStatus() {
                       <div class="product-name">{order.product.prodName}</div>
                       <div class="quantity">x{order.purQuantity}</div>
                       <div class="delivering-status">
+                        From: {order.product.location.address},{" "}
+                        {order.product.location.city},
+                        {order.product.location.province},{" "}
+                        {order.product.location.country}
+                      </div>
+                      <div class="delivering-status">
+                        To:
+                        {order.receivingPlace.address &&
+                          ` ${order.receivingPlace.address}, `}
+                        {order.receivingPlace.city &&
+                          `${order.receivingPlace.city}, `}
+                        {order.receivingPlace.province &&
+                          `${order.receivingPlace.province}, `}
+                        {order.receivingPlace.country &&
+                          `${order.receivingPlace.country}`}
+                      </div>
+                      <div class="delivering-status">
                         {translateStatus(order.status)}
                       </div>
                       
@@ -331,7 +352,8 @@ function DeliveryStatus() {
                         Proposed price:
                       </div>
                       <div class="price" style={{ marginTop: "50px" }}>
-                        đ {order.userProposedPrice * 1000}
+                        
+                        ${order.userProposedPrice}
                       </div>
                     </div>
                   </div>
@@ -351,7 +373,7 @@ function DeliveryStatus() {
                       </div>
                       <div class="cost" style={{ marginTop: "50px" }}>
                         {" "}
-                        đ {order.purShippingFee * 1000}
+                        ${order.purShippingFee}
                       </div>
                     </div>
                     <div class="lower-right-half">
@@ -360,9 +382,8 @@ function DeliveryStatus() {
                       </div>
                       <div class="cost" style={{ marginTop: "50px" }}>
                         {" "}
-                        đ{" "}
-                        {order.purShippingFee * 1000 +
-                          order.userProposedPrice * 1000}{" "}
+                        ${" "}
+                        {parseFloat(order.purShippingFee )+ parseFloat(order.userProposedPrice)}{" "}
                       </div>
                     </div>
                   </div>
