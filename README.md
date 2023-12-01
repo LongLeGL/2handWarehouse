@@ -1,13 +1,13 @@
 Test accounts:
 
-Admin:
+Admin: (Sys Admin - id:12)
 - admin@2hw.com
 - admin
 
-Shipper:
+Shipper: (Jonh Shipp - id:13)
 - shipper1@2hw.com
 - shipper
 
-User:
+User: (Jane Holmer - id:14)
 - jane@2hw.com
 - user

@@ -18,7 +18,7 @@ function OrderPage() {
     // const [contact, setContact] = useState(0);
     // const [deliver, setDeliver] = useState(0);
     const [total, setTotal] = useState(0);
-    // const [finalTotal, setFinalTotal] = useState(0);
+    const [finalTotal, setFinalTotal] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
     const { id } = useParams();
     const [err, setErr] = useState('');
@@ -30,8 +30,7 @@ function OrderPage() {
 
     let userId = sessionStorage.getItem("userId");
     console.log(userId)
-    const handleChildClick = (childState) => {
-
+    const handleChildClick = (childState) => {  //clicking quantity picker
         setAmount(childState);
     };
     useEffect(() => {
@@ -72,7 +71,7 @@ function OrderPage() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    proposedPrice: proposedPrice,
+                    proposedPrice: finalTotal,
                     quantity: amount,
                     shippingFee: shipFee,
                     shipMethod: shipMethod,
@@ -111,7 +110,6 @@ function OrderPage() {
             // console.log(data.items.prodQuantity)
         }
         setTotal(total)
-        // setFinalTotal(finaltotal)
     }, [amount, data]);
 
     if (data) {
@@ -196,8 +194,12 @@ function OrderPage() {
                         <div class="flex flex-col w-full p-[20px] bg-white rounded-lg">
                             <div class="summary">Summary</div>
                             <div class="detail">
-                                <div class="detail-attribute">Price</div>
-                                <div class="detail-value">{total}</div>
+                                <div class="detail-attribute">Total Asking Price</div>
+                                <div class="detail-value">${total}</div>
+                            </div>
+                            <div class="detail">
+                                <div class="detail-attribute">Proposed Price</div>
+                                <div class="detail-value">${proposedPrice}</div>
                             </div>
                             <div class="detail">
                                 <div class="detail-attribute">Shipping cost</div>
@@ -211,8 +213,8 @@ function OrderPage() {
                                 }}
                             />
                             <div class="detail">
-                                <div class="detail-attribute">Total</div>
-                                <div class="detail-value">${total + shipFee}</div>
+                                <div class="detail-attribute">Final Total</div>
+                                <div class="detail-value">${parseFloat(finalTotal) + shipFee}</div>
                             </div>
                             <button type="button" class="cursor-pointer bg-[#000000] rounded-[30px] text-sm font-light h-[35px] mt-[20px] font-serif"
                                 onClick={handlefetch}>Send order for approval</button>
@@ -274,10 +276,19 @@ function OrderPage() {
                                     onChange={event => setAddress(event.target.value)} />
                             </div>
                             <div className="flex flex-col">
-                                <label for="proposed-price" className='text-2xl mb-[20px]'>Proposed price</label>
+                                <label for="proposed-price" className='text-2xl mb-[20px]'>Propose a different price:</label>
                                 <input name="myInput" className='bg-slate-100  py-[14px] pl-[24px] w-[450px] rounded-2xl  mb-[20px]'
-                                    value={proposedPrice}
-                                    onChange={event => setPropPrice(event.target.value)} />
+                                    value={`${proposedPrice}`}
+                                    onChange={event => {
+                                        if (event.target.value != '') {
+                                            setPropPrice(event.target.value);
+                                            setFinalTotal(event.target.value);
+                                        }
+                                        else {
+                                            setPropPrice(0);
+                                            setFinalTotal(total);
+                                        }
+                                    }} />
                             </div>
 
                         </div>

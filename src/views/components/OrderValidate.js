@@ -124,7 +124,9 @@ function OrderValidate() {
           </div>
         </div>
         <div class="nav-bar-2">
-          <div class="nav-2">Delivering orders</div>
+          <div class="nav-2">
+            <a href="/2HandWarehouse/DeliveryStatus" >Delivering orders</a>
+          </div>
           <div class="nav-2" style={{ color: "#FF5F00" }}>
             Waiting approval
           </div>
@@ -153,14 +155,14 @@ function OrderValidate() {
                       </div>
                       <div class="upper-right-half">
                         <div class="asking">Asking price:</div>
-                        <div class="price">đ {order.product.prodAskPrice * 1000}</div>
+                        <div class="price">${order.product.prodAskPrice*order.purQuantity}</div>
                       </div>
                       <div class="upper-right-half">
                         <div class="asking" style={{ marginTop: "0px" }}>
                           Proposed price:
                         </div>
                         <div class="price" style={{ marginTop: "0px" }}>
-                          đ {order.userProposedPrice * 1000}
+                          ${order.userProposedPrice}
                         </div>
                       </div>
                     </div>{" "}
